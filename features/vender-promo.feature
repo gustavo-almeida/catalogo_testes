@@ -31,7 +31,7 @@ E editar campo Digite o email com 'taiana.moreira@m4u.com.br'
 E clicar em 'Enviar'
 Então a mensagem "Email enviado com sucesso" deve ser exibida 
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @blink
 Cenário: VENDER-PROMO-0002 - Resgate Monetário R$10.100,06
@@ -62,7 +62,7 @@ E editar campo Digite o email com 'taiana.moreira@m4u.com.br'
 E clicar em 'Enviar'
 Então a mensagem "Email enviado com sucesso" deve ser exibida 
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @blink
 Cenário: VENDER-PROMO-0003 - Não há resgate financeiro R$10.100,08
@@ -82,7 +82,7 @@ E editar campo Digite o email com 'taiana.moreira@m4u.com.br'
 E clicar em 'Enviar'
 Então a mensagem "Email enviado com sucesso" deve ser exibida 
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @non_blink #Ao selecionar 'POSTO ABC' para testes no Blink, opção troco não é exibida.
 Cenário: VENDER-PROMO-0004 - Desconto Instantâneo Débito com troco R$10.000,20
@@ -114,7 +114,7 @@ E editar campo Digite o email com 'taiana.moreira@m4u.com.br'
 E clicar em 'Enviar'
 Então a mensagem "Email enviado com sucesso" deve ser exibida 
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @blink
 Cenário: VENDER-PROMO-0005 - Resgate Monetário sem envio de Comprovante R$10.010,14
@@ -142,7 +142,7 @@ E o comprovante deve ser exibido
 Quando eu clicar em Finalizar
 E clicar em 'Não' para envio de comprovante por email
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @blink
 Cenário: VENDER-PROMO-0006 - Validar mensagem "não há premiação" sem envio de comprovante R$10.100,01
@@ -170,7 +170,7 @@ E o comprovante deve ser exibido
 Quando eu clicar em Finalizar
 E clicar em 'Não' para envio de comprovante por email
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @blink
 Cenário: VENDER-PROMO-0007 - Transação Financeira NEGADA R$10.010,07
@@ -189,7 +189,7 @@ E selecionar a opção 'E-CUPOM 1' na lista de cupons exibida
 E entrar com '1' na página de seleção de quantidade de cupons
 E clicar em Confirmar
 Então deve aparecer uma mensagem "Resgate Efetuado! Entregue o prêmio."
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
 
 @blink
 Cenário: VENDER-PROMO-0008 - Cancelar quando apenas um E-CUPOM disponível R$10.010,03
@@ -207,4 +207,4 @@ E eu clicar em 'Sim' na tela de Resgate de Prêmios
 E entrar com '1' na página de seleção de quantidade de cupons
 E aciono o botão Cancelar
 Então a mensagem "Resgate não efetuado" deve ser exibida
-E voltar para a tela inicial
+E sou redirecionado para a tela inicial
