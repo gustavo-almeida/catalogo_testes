@@ -165,3 +165,20 @@ Quando eu clicar em Finalizar
 E clicar em 'Não' para envio de comprovante por email
 E a mensagem "NÃO HÁ PREMIAÇÃO CONSULTE REGULAMENTO" deve ser exibida
 E voltar para a tela inicial
+
+Cenário: VENDER-PROMO-0007 - Transação Financeira NEGADA R$10.010,07
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu entrar pelo teclado virtual com o valor "1001007"
+E avançar com a compra com opções: "CRÉDITO", "A VISTA" e "POSTO ABC"
+E entrar com dados do cartão
+| numero        | validade | cod |
+| 4406910000038 | 11/22    | 126 |
+Então um beep deve soar 
+E uma mensagem deve ser exibida por 5 segundos "NEGADA"   
+E a tela de Resgate de Prêmios com as opções 'Não' e 'Sim' deve ser exibida
+Quando eu clicar no botão 'Sim'
+E selecionar a opção 'E-CUPOM 1' na lista de cupons exibida
+E entrar com '1' na página de seleção de quantidade de cupons
+E clicar em Confirmar
+Então deve aparecer uma mensagem "Resgate Efetuado! Entregue o prêmio."
+E voltar para a tela inicial
