@@ -7,11 +7,9 @@ Cenário: RESGATE-PROMO-0001 - Validar Mensagem Resgate não efetuado com o bot�
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
-E entrar com dados do cartão
+E seguir com dados do cartão e selecionar 'Posto Abc'
 | numero_do_cartao    | 4406910000038  |
 | validade            | 11/22          |
-| codigo_seguranca    | 126            |
-E clicar em Confirmar
 Então a tela de Resgate de Prêmios com as opções 'Não' e 'Sim' deve ser exibida
 Quando eu clicar em 'Sim' na tela de Resgate de Prêmios
 E eu selecionar a opção 'E-CUPOM 1' na lista de cupons exibida
@@ -27,11 +25,9 @@ Cenário: RESGATE-PROMO-0002 - Validar botão Fechar (X) do Resgate
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
-E entrar com dados do cartão
+E seguir com dados do cartão e selecionar 'Posto Abc'
 | numero_do_cartao    | 4406910000038  |
 | validade            | 11/22          |
-| codigo_seguranca    | 126            |
-E clicar em Confirmar
 Então a tela de Resgate de Prêmios com as opções 'Não' e 'Sim' deve ser exibida
 Quando eu clicar em 'Sim' na tela de Resgate de Prêmios
 E eu selecionar a opção 'E-CUPOM 1' na lista de cupons exibida
@@ -77,9 +73,9 @@ Cenário: RESGATE-PROMO-0006 - Cancelar na tela de seleção de cupons (Cielo 5.
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
-E entrar com o número do cartão '4406910000038'
-E clicar em Confirmar
-E selecionar "Posto Abc"
+E seguir com dados do cartão e selecionar 'Posto Abc'
+| numero_do_cartao    | 4406910000038  |
+| validade            | 11/22          |
 E selecionar 'Sim' na tela de Resgate de Prêmios
 E clicar em 'Cancelar' na página de seleção de cupons
 Então a mensagem "Resgate não efetuado" deve ser exibida
@@ -90,9 +86,9 @@ Cenário: RESGATE-PROMO-0007 - Resgatar E-CUPOM (Cielo 5.2.1)
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
-E entrar com o número do cartão '4406910000038'
-E clicar em Confirmar
-E selecionar "Posto Abc"
+E seguir com dados do cartão e selecionar 'Posto Abc'
+| numero_do_cartao    | 4406910000038  |
+| validade            | 11/22          |
 E selecionar 'Sim' na tela de Resgate de Prêmios
 E eu selecionar a opção 'E-CUPOM 1' na lista de cupons exibida
 E entrar com '10' na página de seleção de quantidade de cupons
