@@ -58,9 +58,15 @@ Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$26,25'
 
 Cenário: CALCULADORA-0007 - Validar porcentagem
-Dado que o usuário clique na Calculadora e em seguida na operação de Multiplicação e  selecione o número 1,0
-Quando o usuário clique no botão de Porcentagem e em seguida em Check 
-Então a calculadora faz a operação de Porcentagem e volta para a IDE principal com o display preenchido com o valor de R$2,62
+Dado que eu esteja na tela inicial da Cielo LIO
+E com valor 'R$26,25' sendo exibido no display
+Quando eu clicar na função Calculadora
+E clicar na operação Multiplicação
+E entrar com o valor pelo teclado da calculadora '10'
+E clicar na operação Porcentagem
+E clicar no botão Check
+Então sou redirecionado para a tela inicial
+E o display é exibido com valor 'R$2,62'
 
 Cenário: CALCULADORA-0008 - Validar botão Del
 Dado que o usuário clique na Calculadora e em seguida entre com a sequência de entrada 5, 0, 8
