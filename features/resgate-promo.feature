@@ -37,7 +37,7 @@ Então a mensagem "Resgate não efetuado" deve ser exibida
 E sou redirecionado para a tela inicial
 
 @blink
-Cenário: RESGATE-PROMO-0003 - Cancelar após inserir número de função (Cielo 5.1.1)
+Cenário: RESGATE-PROMO-0003 - Cancelar após inserir número de função
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
@@ -46,7 +46,7 @@ Então a mensagem "Operação Cancelada" deve ser exibida
 E sou redirecionado para a página de inserir uma função
 
 @blink
-Cenário: RESGATE-PROMO-0004 - Cancelar após inserir dados do cartão (Cielo 5.1.2)
+Cenário: RESGATE-PROMO-0004 - Cancelar após inserir dados do cartão
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
@@ -57,7 +57,7 @@ Então a mensagem "Operação Cancelada" deve ser exibida
 E sou redirecionado para a página de inserir uma função
 
 @blink
-Cenário: RESGATE-PROMO-0005 - Cancelar após selecionar estabelecimento (Cielo 5.1.3)
+Cenário: RESGATE-PROMO-0005 - Cancelar após selecionar estabelecimento
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
@@ -69,7 +69,7 @@ Então a mensagem "Operação Cancelada" deve ser exibida
 E sou redirecionado para a página de inserir uma função
 
 @blink
-Cenário: RESGATE-PROMO-0006 - Cancelar na tela de seleção de cupons (Cielo 5.1.4)
+Cenário: RESGATE-PROMO-0006 - Cancelar na tela de seleção de cupons
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
@@ -82,7 +82,7 @@ Então a mensagem "Resgate não efetuado" deve ser exibida
 E sou redirecionado para a página Minha LIO
 
 @blink
-Cenário: RESGATE-PROMO-0007 - Resgatar E-CUPOM (Cielo 5.2.1)
+Cenário: RESGATE-PROMO-0007 - Resgatar E-CUPOM
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
@@ -95,3 +95,18 @@ E entrar com '10' na página de seleção de quantidade de cupons
 E clique Confirmar
 Então a mensagem "Resgate efetuado! Entregue o prêmio." deve ser exibida
 E sou redirecionado para a página Minha LIO
+
+@blink
+Esquema do Cenário: RESGATE-PROMO-0008 - Validar valores limite ao resgatar E-CUPOM
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
+E entrar com a função '29' e Confirmar
+E seguir com dados do cartão e selecionar 'Posto Abc'
+| numero_do_cartao    | 4406910000038  |
+| validade            | 11/22          |
+E selecionar 'Sim' na tela de Resgate de Prêmios
+E eu selecionar a opção 'E-CUPOM 1' na lista de cupons exibida
+Então ao Confirmar o <valor> do cupom, receberei a <resposta>
+| valor  | resposta                                                          |
+| 0      | Valor informado não pode ser zero. Disponível: 10.                |
+| 11     | Valor informado superior a quantidade disponível. Disponível: 10. |
