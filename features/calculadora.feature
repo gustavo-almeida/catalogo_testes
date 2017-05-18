@@ -69,9 +69,13 @@ Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$2,62'
 
 Cenário: CALCULADORA-0008 - Validar botão Del
-Dado que o usuário clique na Calculadora e em seguida entre com a sequência de entrada 5, 0, 8
-Quando o usuário clique no botão DEL uma vez
-Então a calculadora exibe no display o valor de 50
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu clicar na função Calculadora
+E entrar com o valor pelo teclado da calculadora '508'
+E clicar na operação DEL
+E clicar no botão Check
+Então sou redirecionado para a tela inicial
+E o display é exibido com valor 'R$50,00'
 
 Cenário: CALCULADORA-0009 - Validar botão CLR
 Dado que o usuário clique na Calculadora 
