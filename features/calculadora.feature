@@ -18,7 +18,7 @@ Mas com o display preenchido no valor 'R$50,00'
 
 Cenário: CALCULADORA-0003 - Validar somatório de valores
 Dado que eu esteja na tela inicial da Cielo LIO
-E com valor 50,00 sendo exibido no display
+E com valor 'R$50,00' sendo exibido no display
 Quando eu clicar na função Calculadora
 E clicar na operação SOMA
 E entrar com o valor pelo teclado da calculadora '20'
@@ -27,9 +27,14 @@ Então volto para a tela inicial
 Mas com o display preenchido no valor 'R$70,00'
 
 Cenário: CALCULADORA-0004 -Validar subtração de valores
-Dado que o usuário clique na Calculadora e em seguida na operação Subtrair e digite a sequência de entrada: 3,5
-Quando o usuário clique no botão Check
-Então a calculadora faz a operação de subtrair e volta para a IDE principal com o display preenchido com o valor de R$35,00  
+Dado que eu esteja na tela inicial da Cielo LIO
+E com valor 'R$70,00' sendo exibido no display
+Quando eu clicar na função Calculadora
+E clicar na operação SUBTRAIR
+E entrar com o valor pelo teclado da calculadora '35'
+E clicar no botão Check
+Então volto para a tela inicial
+Mas com o display preenchido no valor 'R$35,00' 
 
 Cenário: CALCULADORA-0005 -Validar multiplicação de valores
 Dado que o usuário clique na Calculadora e em seguida na operação de Multiplicação selecionando o número 3
