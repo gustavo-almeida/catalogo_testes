@@ -78,6 +78,8 @@ Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$50,00'
 
 Cenário: CALCULADORA-0009 - Validar botão CLR
-Dado que o usuário clique na Calculadora 
-Quando o usuário clique no sinal de Igual (=)
-Então a calculadora exibe o botão CLR
+Dado que eu esteja na tela inicial da Cielo LIO
+E com valor 'R$50,00' sendo exibido no display
+Quando eu clicar na função Calculadora
+E clicar no sinal de igualdade
+Então no lugar da função DEL será exibido a função CLR
