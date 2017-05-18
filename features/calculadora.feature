@@ -9,9 +9,12 @@ E clicar no botão Fechar
 Então volto para a tela inicial com o display zerado
 
 Cenário: CALCULADORA-0002 - Validar Display
-Dado que o usuário clica na label da Calculadora e entra com a sequência de entradas: 5,0  
-Quando o usuário clicar no botão Check 
-Então a calculadora fecha e volta para a IDE principal com o display preenchido no valor digitado R$50,00. 
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu clicar na função Calculadora
+E entrar com o valor pelo teclado da calculadora '50'
+E clicar no botão Check
+Então volto para a tela inicial
+Mas com o display preenchido no valor 'R$50,00'
 
 Cenário: CALCULADORA-0003 -Validar somatório de valores
 Dado que o usuário clique na operação SOMA e em seguida entra com a sequência de entrada: 2,0
