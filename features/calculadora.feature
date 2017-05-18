@@ -6,40 +6,46 @@ Cenário: CALCULADORA-0001 - Validar Tela Vazia
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu clicar na função Calculadora
 E clicar no botão Fechar 
-Então volto para a tela inicial com o display zerado
+Então sou redirecionado para a tela inicial 
+E o display é exibido com valor 'R$0,00'
 
 Cenário: CALCULADORA-0002 - Validar Display
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu clicar na função Calculadora
 E entrar com o valor pelo teclado da calculadora '50'
 E clicar no botão Check
-Então volto para a tela inicial
-Mas com o display preenchido no valor 'R$50,00'
+Então sou redirecionado para a tela inicial
+E o display é exibido com valor 'R$50,00'
 
 Cenário: CALCULADORA-0003 - Validar somatório de valores
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$50,00' sendo exibido no display
 Quando eu clicar na função Calculadora
-E clicar na operação SOMA
+E clicar na operação Soma
 E entrar com o valor pelo teclado da calculadora '20'
 E clicar no botão Check
-Então volto para a tela inicial
-Mas com o display preenchido no valor 'R$70,00'
+Então sou redirecionado para a tela inicial
+E o display é exibido com valor 'R$70,00'
 
-Cenário: CALCULADORA-0004 -Validar subtração de valores
+Cenário: CALCULADORA-0004 - Validar subtração de valores
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$70,00' sendo exibido no display
 Quando eu clicar na função Calculadora
-E clicar na operação SUBTRAIR
+E clicar na operação Subtração
 E entrar com o valor pelo teclado da calculadora '35'
 E clicar no botão Check
-Então volto para a tela inicial
-Mas com o display preenchido no valor 'R$35,00' 
+Então sou redirecionado para a tela inicial
+E o display é exibido com valor 'R$35,00' 
 
-Cenário: CALCULADORA-0005 -Validar multiplicação de valores
-Dado que o usuário clique na Calculadora e em seguida na operação de Multiplicação selecionando o número 3
-Quando o usuário clique no botão Check 
-Então a calculadora faz a operação de Multiplicar e volta para a IDE principal com o display preenchido com o valor de R$105,00  
+Cenário: CALCULADORA-0005 - Validar multiplicação de valores
+Dado que eu esteja na tela inicial da Cielo LIO
+E com valor 'R$35,00' sendo exibido no display
+Quando eu clicar na função Calculadora
+E clicar na operação Multiplicação
+E entrar com o valor pelo teclado da calculadora '3'
+E clicar no botão Check
+Então sou redirecionado para a tela inicial
+E o display é exibido com valor 'R$105,00'
 
 Cenário: CALCULADORA-0006 -Validar divisão de valores
 Dado que o usuário clique na Calculadora e em seguida na operação de Divisão selecionando o número 4
