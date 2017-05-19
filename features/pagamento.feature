@@ -58,7 +58,24 @@ E clicar em 'Enviar'
 Então a mensagem "Email enviado com sucesso" deve ser exibida 
 E sou redirecionado para o carrinho
 E o status do pedido é exibido como "EM PAGAMENTO" e opção 'PAGO'
-Mas com valor pago e restante a pagar atualizados
+
+@blink  
+Cenário: PAGAMENTO-0006 - Pedido com pagamento parcial
+Dado que eu esteja na tela de carrinho com um pedido de 'R$100,00' iniciado
+Quando eu clicar em Pagar
+E entrar pelo teclado virtual com o valor "5000"
+E clicar em Pagar
+Então a tela com as formas de pagamento deve ser exibida
+Quando avançar com o pagamento com opções: "CRÉDITO", "A VISTA" e "POSTO ABC"
+E entrar com dados do cartão
+| numero_do_cartao    | 4406910000038  |
+| validade            | 11/22          |
+E clicar em Confirmar
+E prosseguir sem assinar
+E clicar em Finalizar na tela de exibição do comprovante
+E clicar em 'Não' para envio de comprovante por email
+Então sou redirecionado para o carrinho
+E com valor pago e restante a pagar atualizados com 'R$50,00' cada
 
 @blink
 Cenário: PAGAMENTO-0007
