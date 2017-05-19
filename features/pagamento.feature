@@ -7,7 +7,7 @@ Cenário: PAGAMENTO-0001 - Validar tela de escolha de forma de pagamento
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu entrar pelo teclado virtual com o valor "1015"
 E tocar em 'Pagar R$10,15'
-Então a tela de escolha a forma de pagamento deve ser exibida
+Então a tela com as formas de pagamento deve ser exibida
 
 @non_blink #Nenhuma LIO configurada com essas pré-condições
 Cenário: PAGAMENTO-0002 - Validar pagamento com Cielo Mobile sem versão mínima pré configurada
@@ -39,36 +39,26 @@ Então sou redirecionado para a tela inicial com o pedido iniciado removido
 E o carrinho tem o círculo vermelho removido
 
 @blink  
-Cenário: PAGAMENTO-0005
-Dado  que o usuário digite o valor R$ 100,00 ,clique no botão enter e clique no carrinho
-
-Quando  o usuário clicar no botão de pagar , digitar o valor de 50,00 e clicar em pagar
-
-Então a tela com as formas de pagamento deverá ser exibida
-
-Dado  que o usuário selecione Crédito, a vista  e posto abc 
-
-
-Quando  o usuário informar os dados do cartão. 
-        Número do cartão: 4406910000038
-        Data de Validade: 11/22
-e clicar no botão de confirmar 
-        
-
-Então  E O usuário deverá clicar no botão  Prosseguir sem assinar”
- E comprovante deve ser exibido 
-
-Quando  o usuário clicar no botão finalizar
-        E clicar no botão “ sim “ para mandar o comprovante por email
-
-
-Então  deve aparecer a tela para digitar o email 
-taiana.moreira@m4u.com.br
-
-Quando  o usuário clicar em enviar
-        
-Então  deve aparecer a mensagem de “e-mail enviado com sucesso”
-  E voltar para a tela de vender 
+Cenário: PAGAMENTO-0005 - Validar pedido com status "Em pagamento"
+Dado que eu esteja na tela de carrinho com um pedido de 'R$100,00' iniciado
+Quando eu clicar em Pagar
+E entrar pelo teclado virtual com o valor "5000"
+E clicar em Pagar
+Então a tela com as formas de pagamento deve ser exibida
+Quando avançar com o pagamento com opções: "CRÉDITO", "A VISTA" e "POSTO ABC"
+E entrar com dados do cartão
+| numero_do_cartao    | 4406910000038  |
+| validade            | 11/22          |
+E clicar em Confirmar
+E prosseguir sem assinar
+E clicar em Finalizar na tela de exibição do comprovante
+E clicar em 'Sim' para envio de comprovante por email
+E editar campo Digite o email com 'taiana.moreira@m4u.com.br' 
+E clicar em 'Enviar'
+Então a mensagem "Email enviado com sucesso" deve ser exibida 
+E sou redirecionado para o carrinho
+E o status do pedido é exibido como "EM PAGAMENTO" e opção 'PAGO'
+Mas com valor pago e restante a pagar atualizados
 
 @blink
 Cenário: PAGAMENTO-0007
