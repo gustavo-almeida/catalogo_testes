@@ -42,7 +42,7 @@ E o carrinho tem o círculo vermelho removido
 Cenário: PAGAMENTO-0005 - Validar pedido com status "Em pagamento"
 Dado que eu esteja na tela de carrinho com um pedido de 'R$100,00' iniciado
 Quando eu clicar em Pagar
-E entrar pelo teclado virtual com o valor "5000"
+E entrar pelo teclado virtual com o valor "R$50,00"
 E clicar em Pagar
 Então a tela com as formas de pagamento deve ser exibida
 Quando avançar com o pagamento com opções: "CRÉDITO", "A VISTA" e "POSTO ABC"
