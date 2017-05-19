@@ -18,12 +18,12 @@ Então um modal de erro com a mensagem "Seu método de pagamento está desatuali
 E o módulo de atualização da AppStore é invocado automaticamente para verificação de atualizações de Apps disponíveis
 
 @blink
-Cenário: PAGAMENTO-0003
-Dado  o usuário digite o valor R$100,00 e clique no botão enter 
-
-Quando  o usuário clicar no carrinho
-
-Então  deve aparecer a tela de pedido com status iniciado e botão limpar
+Cenário: PAGAMENTO-0003 - Validar inclusão de valor no carrinho
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu entrar pelo teclado virtual com o valor "10000"
+E tocar na função Enter
+E clicar no carrinho
+Então sou redirecionado para a tela de pedido com status 'INICIADO' e opção 'LIMPAR'
 
 @blink   
 Cenário: PAGAMENTO-0004
