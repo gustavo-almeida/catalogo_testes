@@ -32,8 +32,8 @@ Quando eu entrar pelo teclado virtual com o valor "10000"
 E tocar na função Enter
 E clicar no carrinho
 E clicar na opção 'LIMPAR'
-Então um modal com a mensagem "Deseja limpar o carrinho?" 
-E opções CANCELAR e CONFIRMAR
+Então um modal com a mensagem "Deseja limpar o carrinho?" é exibido
+E com opções CANCELAR e CONFIRMAR
 Quando selecionar a opção CONFIRMAR
 Então sou redirecionado para a tela inicial com o pedido iniciado removido
 E o carrinho tem o círculo vermelho removido
