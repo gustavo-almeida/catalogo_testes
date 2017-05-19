@@ -3,7 +3,7 @@
 Funcionalidade: Como usuário Cielo LIO, gostaria de utilizar a extensão PROMO
 
 @blink
-Cenário: RESGATE-PROMO-0001 - Validar Mensagem Resgate não efetuado com o botão Cancelar (Cielo 5.1.5)
+Cenário: RESGATE-PROMO-0001 - Validar Mensagem Resgate não efetuado com o botão Cancelar
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu acessar "Ajuda" > "Minha LIO" > "Funções Técnicas"
 E entrar com a função '29' e Confirmar
