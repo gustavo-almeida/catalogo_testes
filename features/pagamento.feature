@@ -26,16 +26,17 @@ E clicar no carrinho
 Então sou redirecionado para a tela de pedido com status 'INICIADO' e opção 'LIMPAR'
 
 @blink   
-Cenário: PAGAMENTO-0004
-Dado  o usuário digite o valor R$100,00 e clique no botão enter 
-
-Quando  o usuário clicar no carrinho
-              E clicar no botão Limpar 
-
-Então  o modal com a mensagem “Deseja limpar  o carrinho?” é exibida com opção SIM ou NÃO. Ao selecionar a opção SIM, a imagem do carrinho tem o círculo vermelho removido e o pedido iniciado é removido.
-
-        
-
+Cenário: PAGAMENTO-0004 - Limpar pedido iniciado
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu entrar pelo teclado virtual com o valor "10000"
+E tocar na função Enter
+E clicar no carrinho
+E clicar na opção 'LIMPAR'
+Então um modal com a mensagem "Deseja limpar o carrinho?" 
+E opções CANCELAR e CONFIRMAR
+Quando selecionar a opção CONFIRMAR
+Então sou redirecionado para a tela inicial com o pedido iniciado removido
+E o carrinho tem o círculo vermelho removido
 
 @blink  
 Cenário: PAGAMENTO-0005
