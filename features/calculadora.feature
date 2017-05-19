@@ -2,6 +2,7 @@
 
 Funcionalidade: Como usuário Cielo LIO, gostaria de validar as funcionalidades da calculadora.
 
+@blink
 Cenário: CALCULADORA-0001 - Validar Tela Vazia
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu clicar na função Calculadora
@@ -9,6 +10,7 @@ E clicar no botão Fechar
 Então sou redirecionado para a tela inicial 
 E o display é exibido com valor 'R$0,00'
 
+@blink
 Cenário: CALCULADORA-0002 - Validar Display
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu clicar na função Calculadora
@@ -17,6 +19,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$50,00'
 
+@blink
 Cenário: CALCULADORA-0003 - Validar somatório de valores
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$50,00' sendo exibido no display
@@ -27,6 +30,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$70,00'
 
+@blink
 Cenário: CALCULADORA-0004 - Validar subtração de valores
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$70,00' sendo exibido no display
@@ -37,6 +41,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$35,00' 
 
+@blink
 Cenário: CALCULADORA-0005 - Validar multiplicação de valores
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$35,00' sendo exibido no display
@@ -47,6 +52,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$105,00'
 
+@blink
 Cenário: CALCULADORA-0006 - Validar divisão de valores
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$105,00' sendo exibido no display
@@ -57,6 +63,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$26,25'
 
+@blink
 Cenário: CALCULADORA-0007 - Validar porcentagem
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$26,25' sendo exibido no display
@@ -68,6 +75,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$2,62'
 
+@blink
 Cenário: CALCULADORA-0008 - Validar botão Del
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu clicar na função Calculadora
@@ -77,6 +85,7 @@ E clicar no botão Check
 Então sou redirecionado para a tela inicial
 E o display é exibido com valor 'R$50,00'
 
+@blink
 Cenário: CALCULADORA-0009 - Validar botão CLR
 Dado que eu esteja na tela inicial da Cielo LIO
 E com valor 'R$50,00' sendo exibido no display
