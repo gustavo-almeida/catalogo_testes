@@ -99,45 +99,36 @@ Cenário: PAGAMENTO-0008 - Pagamento parcelamento loja
 Dado que eu esteja na tela inicial da Cielo LIO
 Quando eu entrar pelo teclado virtual com o valor "R$500,00"
 E avançar com o pagamento com opções: "CRÉDITO", "PARC. LOJA" e "POSTO ABC"
-E entrar com número de parcelas '02'
 E entrar com dados do cartão
-| numero_do_cartao    | 4406910000038  |
-| validade            | 11/22          |
+| numero_de_parcelas        | 02                |
+| numero_do_cartao          | 4406910000038     |
+| validade                  | 11/22             |
 E clicar em Confirmar
 E prosseguir sem assinar
 E clicar em Finalizar na tela de exibição do comprovante
-E clicar em Sim para envio de comprovante por email
+E clicar em 'Sim' para envio de comprovante por email
 E editar campo Digite o email com 'taiana.moreira@m4u.com.br' 
-E clicar em Enviar
+E clicar em 'Enviar'
 Então a mensagem "Email enviado com sucesso" deve ser exibida 
 E sou redirecionado para a tela inicial
 
-@blink
-Cenário: PAGAMENTO-0009
-Dado  o usuário digite o valor R$800,00 clicar no botão pagar e escolher as opções de Crediário, venda e  posto ABC
-
-Quando  o usuário informar os dados do cartão. 
-        Número do cartão: 4242424242424242
-        Data de Validade: 11/22
-        Número de parcelas:02
-        Valor de entrada: R$100,00
-                        Valor da 1ª parcela: 200,00
-Data da 1ª parcela: 20/02/2017
-        E clicar em confirmar
-
-Então A tela de assinatura deve aparecer
-
-Quando o usuário clicar em prosseguir sem assinar 
-
-Então comprovante do estabelecimento  deve ser exibido 
-
-Quando  o usuário clicar no botão finalizar
-        E clicar no botão “ sim “ para mandar o comprovante por email
-
-Então  deve aparecer a tela para digitar o email 
-taiana.moreira@m4u.com.br
-
-Quando  o usuário clicar em enviar
-        
-Então  deve aparecer a mensagem de “e-mail enviado com sucesso”
-  E voltar para a tela de vender 
+@non_blink #função crediário não é exibida para todas as LIOs
+Cenário: PAGAMENTO-0009 - Pagamento por Crediário
+Dado que eu esteja na tela inicial da Cielo LIO
+Quando eu entrar pelo teclado virtual com o valor "R$800,00"
+E avançar com o pagamento com opções: "CREDIÁRIO", "VENDA" e "POSTO ABC"
+E entrar com dados do cartão
+| numero_de_parcelas        | 02                |
+| numero_do_cartao          | 4406910000038     |
+| validade                  | 11/22             |
+| valor_de_entrada          | 100,00            |
+| valor_primeira_parcela    | 200,00            |
+| data_primeira_parcela     | <data atual>      |
+E clicar em Confirmar
+E prosseguir sem assinar
+E clicar em Finalizar na tela de exibição do comprovante
+E clicar em 'Sim' para envio de comprovante por email
+E editar campo Digite o email com 'taiana.moreira@m4u.com.br' 
+E clicar em 'Enviar'
+Então a mensagem "Email enviado com sucesso" deve ser exibida 
+E sou redirecionado para a tela inicial
