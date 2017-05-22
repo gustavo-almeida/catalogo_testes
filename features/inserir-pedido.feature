@@ -16,22 +16,22 @@ E selecionar a Opção Continuar
 Então deve aparecer a tela com código do pedido informado
 E opção Voltar
 E opções Tabs: Valor (selecionada) e Catálogo
-E Teclado Numérico com funções adicionais: 'BCK', 'Qtd', 'Enter', 'Calculadora', 'Carrinho'
-E opção "Liberar Pagamento" desabilitado 
+E Teclado Numérico com funções: 'BCK', 'Qtd', 'Enter', 'Calculadora', 'Carrinho'
+E opção "Liberar Pagamento" desabilitada
 E TabBar: 'Vender' (selecionada), 'Minha Conta', 'Apps' e 'Ajuda'
 E opções nativas do Android: 'Back', 'Home' e 'Apps'
 
+@blink
+Cenário: INSERIR-PEDIDO-0003 - Validar função Enter na inclusão de pedido
+Dado que eu esteja na tela de inclusão de pedido
+Quando eu informar o valor "R$ 2,50" 
+E selecionar a função 'Enter'
+Então o botão "Liberar Pagamento" é exibido habilitado com o valor informado 
+E a função 'Carrinho' deve exibir um contador com o valor '1'
 
-
-
-Cenário: INSERIR-PEDIDO-0003
-Dado  que o usuário esteja criando um pedido
-Quando  informar o valor “R$ 2,50” do Item e selecionar a opção “Enter”
-Então  deve aparecer no botão  “Liberar Pagamento” o valor informado e deve ser visualizado no ícone “Carrinho de Pedidos” o contador de itens com o valor 1
-
+@blink
 Cenário: INSERIR-PEDIDO-0004
-Dado  que o usuário esteja criando um pedido e com um valor no carrinho 
-
+Dado  que o usuário esteja criando um pedido e com um valor no carrinho
 Quando  informar o valor “ R$ 4,00” e selecionar a opção “Enter”
 Então  no botão “Liberar Pagamento” é atualizado o valor “R6,50” e deve ser visualizado no ícone “Carrinho de Pedidos” o contador de itens com o valor 2
 Quando                o usuário  clicar no botão “Liberar Pagamento R$ 6,50” 
