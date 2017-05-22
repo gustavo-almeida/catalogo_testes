@@ -1,6 +1,6 @@
 #language:pt
 
-Funcionalidade: Como usuário Cielo LIO, gostaria de validar as funcionalidades da calculadora.
+Funcionalidade: Como usuário Cielo LIO, gostaria de validar as funcionalidades de Cadastro de Produto.
 
 @blink
 Cenário: PROD-CATAG-0001 - Validar catálogo quando não há produtos cadastrados

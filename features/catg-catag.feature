@@ -11,7 +11,7 @@ Então deve aparecer um menu com opções "Cadastrar produto", "Cadastrar catego
 
 @blink
 Cenário: CATG-CATAG-0002 - Exibir opção de cadastrar categoria
-Dado eu esteja na tela de Catálogo com o menu de opções de cadastro sendo exibido
+Dado eu esteja na tela de Catálogo com o menu de opções (...) sendo exibido
 Quando eu clicar na opção Cadastrar categoria
 Então é exibido um modal Cadastrar categoria com campo para preenchimento 
 E opções CANCELAR e CONTINUAR

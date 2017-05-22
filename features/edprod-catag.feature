@@ -7,7 +7,7 @@ Cenário: EDPROD-CATAG-0001 - Visão geral de produto
 Dado que tenha um produto cadastrado
 E que eu esteja na tela de Catálogo
 Quando clicar sobre um produto
-Então deve aparecer um modal de dados do produto selecionado com opções Fechar e Editar
+Então deve aparecer um modal de dados do produto com opções Fechar e Editar
 E opções Diminuir (-) e Aumentar (+)
 
 @blink
