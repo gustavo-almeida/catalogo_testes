@@ -31,21 +31,22 @@ E a função 'Carrinho' deve exibir um contador com o valor '1'
 
 @blink
 Cenário: INSERIR-PEDIDO-0004
-Dado  que o usuário esteja criando um pedido e com um valor no carrinho
-Quando  informar o valor “ R$ 4,00” e selecionar a opção “Enter”
-Então  no botão “Liberar Pagamento” é atualizado o valor “R6,50” e deve ser visualizado no ícone “Carrinho de Pedidos” o contador de itens com o valor 2
-Quando                o usuário  clicar no botão “Liberar Pagamento R$ 6,50” 
-Então  deve aparecer a Tela Tab com as opções: Valor, Catálogo e Pedidos (Selecionado)
-Lista de Seleção com as Opções:Abertos e fechados ( abertos selecionados)
-Opção de Busca (ícone de Lupa)
-(+) Menu com a opção “Novo Pedido” habilitado
-Lista com o Pedido criado, na seção “ Aberto” com status de “ Em Pagamento”, valor “R$6,50” e com a data da última atualização.
-TabBar: Vender (Selecionada), Minha Conta, Apps e Ajuda
-Opções Default do android: Back, Home e Apps
+Dado que eu esteja na tela de inclusão de pedido
+E com o valor de "R$2,50" no carrinho
+Quando informar o valor "R$4,00" 
+E selecionar a função 'Enter'
+Então o botão "Liberar Pagamento" é atualizado com o valor "R$6,50"
+E a função 'Carrinho' deve exibir um contador com o valor '2'
+Quando eu clicar no botão "Liberar Pagamento R$ 6,50" 
+Então deve aparecer a Tela Tab com as opções: 'Valor', 'Catálogo' e 'Pedidos' (Selecionado)
+E filtro com as opções 'Abertos' (selecionado) e 'Fechados'
+E opção de Busca (ícone de Lupa)
+E opção "Novo Pedido" (+)
+E lista com o Pedido criado com status de "Em Pagamento"
+E valor "R$6,50" e data da última atualização
+E TabBar: 'Vender' (selecionada), 'Minha Conta', 'Apps' e 'Ajuda'
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
 
-
-
-
 
 Cenário: PEDIDO-0005
 Dado  Que o usuário  esteja na tela de pedido 
