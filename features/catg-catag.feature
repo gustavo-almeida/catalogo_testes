@@ -7,7 +7,7 @@ Cenário: CATG-CATAG-0001 - Validar menu de opções do Catálogo
 Dado que eu tenha um produto cadastrado
 E que eu esteja na tela de Catálogo
 Quando eu clicar na opção '...' no cabeçalho
-Então deve aparecer um menu com opções 'Cadastrar produto', 'Cadastrar categoria' e 'Editar categoria'
+Então deve aparecer um menu com opções "Cadastrar produto", "Cadastrar categoria" e "Editar categoria"
 
 @blink
 Cenário: CATG-CATAG-0002 - Exibir opção de cadastrar categoria
