@@ -120,29 +120,25 @@ Mas o pedido não é mais exibido por não estar mais aberto
 Quando eu limpar a busca e selecionar o filtro "Fechados"
 Então a lista de pedidos é atualizada e o pedido recém fechado é listado
 
-
-Cenário: PEDIDO-0008 
-Dado  Que o usuário  esteja na tela de pedido 
-        E que exista um produto X cadastrado com valor “R$4,99" com categoria A
-E que exista um produto Y cadastrado com valor “R$10,00" com categoria B
-E que exista um produto Z cadastrado com valor “R$20,00" com categoria C
-
-Quando  o usuário criar um pedido
-        E selecionar a tab Catálogo
-
-Então  deve ser exibida uma tela de Pedido contendo:
-Fragmento com a opção voltar (Botão <-) e nome do pedido 
-Tab com as opções: Valor e Catálogo(Selecionado)
-Lista de Seleção com as Opções: Todos os itens (Selecionado), A, B e C 
-Opção de Busca (ícone de Lupa)
-Opção de Leitura por código de barras(ícone de barcode)
-Botão ...
-Lista com itens A, B e C separados por categoria, cada um com contador “0” e botões de + e -. 
-Botão “Liberar Pagamento” desabilitado e botão com ícone de carrinho de compras desabilitado.
-TabBar: Vender (Selecionada), Minha Conta, Apps e Ajuda
-Opções Default do android: Back, Home e Apps
-
-
+@blink
+Cenário: PEDIDO-0008 - Validar Catálogo de pedido com múltiplos produtos 
+Dado que eu esteja na tela de pedido 
+E que exista um produto X cadastrado com valor "R$4,99" com categoria A
+E que exista um produto Y cadastrado com valor "R$10,00" com categoria B
+E que exista um produto Z cadastrado com valor "R$20,00" com categoria C
+Quando eu criar um pedido
+E selecionar a tab Catálogo
+Então deve ser exibida uma tela de Pedido
+E cabeçalho com a opção Voltar (seta) e nome do pedido 
+E tab com as opções Valor e Catálogo (Selecionado)
+E lista de Seleção com as Opções: Todos os itens (Selecionado), A, B e C 
+E opção de Busca (ícone de Lupa)
+E opção de Leitura por código de barras(ícone de barcode)
+E botão de opções (...)
+E lista com itens A, B e C separados por categoria, cada um com contador "0" e opções Aumentar e Diminuir (+ e -) 
+E opções "Liberar Pagamento" e "Carrinho" desabilitadas
+E TabBar Vender (Selecionada), Minha Conta, Apps e Ajuda
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
 
 Cenário: PEDIDO-0009 
 Dado  Que o usuário  esteja na tela de pedido 
