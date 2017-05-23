@@ -47,122 +47,78 @@ E valor "R$6,50" e data da última atualização
 E TabBar: 'Vender' (selecionada), 'Minha Conta', 'Apps' e 'Ajuda'
 E opções nativas do Android: 'Back', 'Home' e 'Apps'
 
+@blink
+Cenário: PEDIDO-0005 - Validação de busca de pedidos
+Dado que eu esteja na Tela de Pedidos
+Quando selecionar filtro Fechados 
+E clicar na Opção de Busca (ícone de Lupa) 
+Então deve ser exibida uma caixa de texto com o Label "Pesquisar" e opção Voltar no lugar das opções anteriores 
+E lista dos pedidos fechados pela LIO abaixo
+Quando eu digitar na caixa de texto "Pesquisar" o nome de algum pedido recém criado
+Então a lista de pedidos deve estar vazia apenas com mensagem "Nenhum resultado encontrado"
+Quando eu clicar em Voltar 
+E selecionar filtro de pedidos Abertos
+E clicar na Opção de Busca (ícone de Lupa) 
+E eu digitar na caixa de texto "Pesquisar" o nome de algum pedido recém criado
+Então a lista de pedidos deve exibir o pedido recém criado
+Quando eu clicar em Voltar
+E selecionar filtro de pedidos Abertos
+E clicar na Opção de Busca (ícone de Lupa)
+E eu digitar na caixa de texto "Pesquisar" um caractere qualquer do nome do pedido recém criado
+Então a lista de pedidos deve exibir o pedido recém criado dentre outros pedidos cujo nome também contenha o caractere digitado
 
-Cenário: PEDIDO-0005
-Dado  Que o usuário  esteja na tela de pedido 
 
-Quando  selecionar os pedidos  fechados 
-E clicar sobre a Opção de Busca (ícone de Lupa) 
+Cenário: PEDIDO-0006 - Validar status do pedido
+Dado que eu tenha um pedido em aberto com valores avulsos 'R$4,00' e 'R$2,50'
+E eu esteja na tela de pedido com esse pedido listado
+Quando eu clicar no pedido recém aberto
+Então deve ser exibida uma tela de Fechamento de Pedido com nome do pedido e status "EM PAGAMENTO"
+E opções Sair (X) e PAGO
+E Tab com as opções: Conta (Selecionado) e Pagamentos
+E Lista com 2 itens com quantidade 1, tipo "Valor Avulso" e valores "R$4,00" e "R$2,50" respectivamente.
+E ao final da lista com a label "TOTAL" e o valor final do pedido "R$6,50"
+E uma opção Pagar
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
+Quando eu clicar em Sair (X)
+Então deve ser exibida uma mensagem "Este pedido ainda não foi totalmente pago. Deseja realmente sair?" com as opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em "Confirmar"
+Então a tela pedidos é exibida novamente com o último filtro de pesquisa utilizado
+Quando eu clicar no pedido recém aberto
+Então deve ser exibida a tela de Fechamento de Pedido com os dados de pedido inalterados
+Quando eu clicar no botão PAGO
+Então deve ser exibida uma mensagem "Faltam R$6,50. Deseja classificar como PAGO?" com as opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em Cancelar
+Então tela de Fechamento de Pedido é exibida com os dados de pedido inalterados
+Quando eu clicar no botão PAGO
+E eu clicar em Confirmar
+Então a tela pedidos é exibida com o último filtro de pesquisa utilizado 
+E o pedido passa a ter o status "PAGO" e com o ícone de pedido marcado em verde
 
-Então  deve ser exibida uma caixa de texto com o Label “Pesquisar”, uma opção de voltar e abaixo estão listados os pedidos fechados pela LIO. Os seguintes controles ficam invisíveis:
-Lista de Seleção com as Opções:Abertos e fechados
-Opção de Busca (ícone de Lupa)
-(+) Menu com a opção “Novo Pedido” habilitado
-
-
-Quando o usuário digitar na caixa de texto “Pesquisar” o nome do pedido recém criado
-
-Então  o painel de visualização de pedidos deve estar vazio
-
-Quando  o usuário clicar em voltar 
-E na Lista de Seleção selecionar o valor “Abertos”
-E clicar sobre a Opção de Busca (ícone de Lupa) 
-E o usuário digitar na caixa de texto “Pesquisar” o nome completo do pedido recém criado
-
-Então  o painel de visualização de pedidos deve exibir o pedido recém criado
-
-Quando  o usuário clicar em voltar 
-E na Lista de Seleção selecionar o valor “Abertos”
-E clicar sobre a Opção de Busca (ícone de Lupa) 
-E o usuário digitar na caixa de texto “Pesquisar” um caractere qualquer do nome do pedido recém criado
-
-Então  o painel de visualização de pedidos deve exibir o pedido recém criado dentre os outros pedidos cujo nome também contenha o caractere digitado
-
-Cenário: PEDIDO-0006
-Dado  Que o usuário  esteja na tela de pedido e o pedido recém aberto esteja listado
-
-Quando  o usuário clicar no pedido recém aberto
-
-Então  deve ser exibida uma tela de Fechamento de Pedido com
-Fragmento com a opção sair (Botão X), nome do pedido com o status “EM PAGAMENTO” e um botão com a label PAGO
-Tab com as opções: Conta (Selecionado) e Pagamento
-Lista com 2 itens com quantidade 1, tipo  “Valor Avulso” e valores “R$4,00” e “R$2,50” respectivamente.
-Uma linha ao final da lista com a label “TOTAL” e o valor final do pedido “R$6,50”
-Um botão com a opção pagar
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário clicar no Botão X
-
-Então  deve ser exibida uma mensagem “Este pedido ainda não foi totalmente pago. Deseja realmente sair?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “Confirmar”
-
-Então  a tela pedidos é exibida novamente com o último filtro de pesquisa utilizado
-
-Quando  o usuário clicar no pedido recém aberto
-
-Então  deve ser exibida a tela de Fechamento de Pedido com os dados de pedido inalterados
-
-Quando  o usuário clicar no botão PAGO
-
-Então  deve ser exibida uma mensagem “Faltam R$6,00. Deseja classificar como PAGO?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “Cancelar”
-
-Então  deve ser exibida a tela de Fechamento de Pedido com os dados de pedido inalterados
-
-Quando  o usuário clicar no botão PAGO
-
-Então  deve ser exibida uma mensagem “Faltam R$6,50. Deseja classificar como PAGO?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “Confirmar”
-
-Então  a tela pedidos é exibida novamente com o último filtro de pesquisa utilizado e o pedido passa a ter o status “PAGO” e com o ícone de pedido marcado em verde.
-
-Cenário: PEDIDO-0007
-Dado  Que o usuário tenha marcado um pedido como PAGO 
-E que este pedido tenha dois itens avulsos com valores R$4,00 e R$2,50 
-E esteja na tela de pedidos 
-E o pedido esteja listado
-
-Quando  o usuário clicar no pedido marcado como pago
-
-Então  deve ser exibida uma tela de Fechamento de Pedido com
-Fragmento com a opção sair (Botão X), nome do pedido com o status “EM PAGAMENTO” e um botão com a label “FECHAR”
-Tab com as opções: Conta (Selecionado) e Pagamentos
-Lista com 2 itens com quantidade 1, tipo  “Valor Avulso” e valores “R$4,00” e “R$2,50” respectivamente.
-Uma linha ao final da lista com a label “TOTAL” e o valor final do pedido “R$6,50”
-Um botão com a opção pagar
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário clicar na tab “Pagamentos”
-
-Então  deve ser exibida a tela de Fechamento de Pedido com
-Fragmento com a opção sair (Botão X), nome do pedido com o status “EM PAGAMENTO” e um botão com a label “FECHAR”
-Tab com as opções: Conta e Pagamentos (Selecionado) 
-Lista sem itens e com a mensagem “Não há pagamentos” 
-Uma linha ao final da lista com a label “RESTA A PAGAR” e o valor “R$6,50”
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário clicar em “FECHAR”
-
-Então  deve ser exibida uma mensagem “Deseja realmente encerrar esta ordem?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “Cancelar”
-
-Então  deve ser exibida novamente a tela de Fechamento de Pedido na tab “PAGAMENTOS”
-
-Quando  o usuário clicar em “FECHAR”
-
-Então  deve ser exibida uma mensagem “Deseja realmente encerrar esta ordem?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “Confirmar”
-
-Então  a tela pedidos é exibida novamente com o último filtro de pesquisa utilizado e o pedido não é mais exibido por não estar mais aberto.
-
-Quando  o usuário limpar o filtro de pedidos e selecionar a opção “Fechados”
-
-Então  a lista de pedidos é atualizada e o pedido recém fechado é listado.
+Cenário: PEDIDO-0007 - Validar marcar pedido como PAGO
+Dado que eu tenha um pedido marcado como PAGO com valores avulsos 'R$4,00' e 'R$2,50'
+E eu esteja na tela de pedidos com esse pedido listado após buscá-lo
+Quando eu clicar no pedido marcado como pago
+Então deve ser exibida uma tela de Fechamento de Pedido com nome do pedido e status "PAGO"
+E opções Sair (X) e FECHAR
+E Tab com as opções: Conta (Selecionado) e Pagamentos
+E Lista com 2 itens com quantidade 1, tipo "Valor Avulso" e valores "R$4,00" e "R$2,50" respectivamente.
+E ao final da lista com a label "TOTAL" e o valor final do pedido "R$6,50"
+E uma opção Pagar
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
+Quando eu clicar na tab Pagamentos
+Então deve ser exibido o conteúdo da Tab Pagamentos
+E lista sem itens com a mensagem "Não há pagamentos." 
+E ao final da lista com a label "RESTA A PAGAR" e o valor final do pedido "R$6,50"
+Quando eu clicar na opção FECHAR
+Então deve ser exibida uma mensagem "Deseja realmente encerrar esta ordem?" com as opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em CANCELAR
+Então deve ser exibida novamente a tela de Fechamento de Pedido na Tab "Pagamentos"
+Quando  o usuário clicar em "FECHAR"
+E eu clicar em CONFIRMAR
+Então a tela pedidos é exibida novamente com o último filtro de pesquisa utilizado 
+Mas o pedido não é mais exibido por não estar mais aberto
+Quando eu limpar a busca e selecionar o filtro "Fechados"
+Então a lista de pedidos é atualizada e o pedido recém fechado é listado
 
 
 Cenário: PEDIDO-0008 
