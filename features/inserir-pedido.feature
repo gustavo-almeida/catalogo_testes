@@ -200,47 +200,32 @@ Então a tela de pedido é exibida na tab "Catálogo"
 E o botão "Liberar Pagamento" é desabilitado e o carrinho sem contador 
 E o nome do pedido é exibido no cabeçalho
 
-
-Cenário: PEDIDO-0012
-Dado  Que o usuário  esteja na tela de pedido 
-        E que existam um produtos cadastrados
-
-Quando  o usuário criar um pedido
-        E incluir itens
-        E selecionar “Liberar Pagamento”
-
-Então  usuário é retornado à tela de lista de pedidos, onde estão listados todos os pedidos abertos, inclusive o atual. 
-
-Quando  o usuário clicar sobre a lupa
-        E digitar o nome do pedido
-
-Então  a lista de pedidos é filtrada para somente conter o pedido recém aberto como status “EM PAGAMENTO”.
-
-Quando  o usuário clicar sobre o pedido
-
-Então  a tela de pagamento é exibida, com os itens listados discriminados por quantidade e valor e com o total consolidado
-
-Quando  o usuário clicar sobre o botão “Pagar”
-    
-Então  a tela de pagamento é exibida, com os itens listados discriminados por quantidade e valor e com o total consolidado
-
-Quando  o usuário clicar sobre o botão “Pagar”
-
-Então  deve ser exibida uma tela para inclusão de pagamento apresentando:
-Fragmento com a opção sair (Botão X) e nome do pedido 
-Fragmento com a label “RESTA A PAGAR” e o valor total da transação.
-Um teclado numérico com as opções “BACK” e calculadora
-Um botão pagar
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário entrar uma quantia menor do que o valor total do pedido e clicar sobre o botão “Pagar”
-        E realizar o fluxo de pagamento com sucesso
-
-Então  deve ser exibida a tela de pedidos na tab de “Pagamentos” com:
-Uma linha apresentando a forma de pagamento utilizada e o valor pago. 
-Uma linha com a label “TOTAL PAGO” e o valor pago
-Uma linha com a label “RESTA A PAGAR” com o valor restante
-        E o pedido deve continuar com status “EM PAGAMENTO”
+@blink
+Cenário: PEDIDO-0012 - Pedido com pagamento parcial
+Dado que existam produtos cadastrados
+E que eu esteja na tela de pedido        
+Quando eu criar um pedido
+E incluir itens
+E selecionar Liberar Pagamento
+Então é exibida tela com lista de pedidos abertos, inclusive o atual 
+Quando eu realizar uma busca pelo nome do pedido criado
+Então a lista de pedidos é filtrada com o pedido recém aberto com o status "EM PAGAMENTO"
+Quando eu clicar sobre o pedido
+Então a tela de pagamento é exibida, com os itens listados discriminados por quantidade e valor e com o total consolidado
+Quando eu clicar em "Pagar"
+Então deve ser exibida uma tela para inclusão de pagamento apresentando
+E com opções Sair (X) e Nome do pedido 
+E label "RESTA A PAGAR" com o valor total da transação
+E teclado numérico com as opções "BCK" e "Calculadora"
+E botão Pagar
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
+Quando eu entrar com uma quantia menor do que o valor total do pedido e clicar em Pagar
+E realizar o fluxo de pagamento com sucesso
+Então deve ser exibida a tela de pedidos na tab de "Pagamentos"
+E uma linha apresentando a forma de pagamento utilizada e o valor pago 
+E uma linha com a label "TOTAL PAGO" e o valor pago
+E uma linha com a label "RESTA A PAGAR" com o valor restante
+E o pedido deve continuar com status "EM PAGAMENTO"
 
 
 
