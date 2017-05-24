@@ -227,44 +227,36 @@ E uma linha com a label "TOTAL PAGO" e o valor pago
 E uma linha com a label "RESTA A PAGAR" com o valor restante
 E o pedido deve continuar com status "EM PAGAMENTO"
 
+@blink
+Cenário: PEDIDO-0013 - Pagar valor restante de pedido com pagamento parcial
+Dado que eu tenha um pedido com pagamento parcial completado 
+E que esteja na tela de detalhe de pagamento
+Quando selecionar "Pagar"
+E realizar o fluxo de pagamento com a quantia restante
+Então deve ser exibida a tela de pedidos na tab de "Pagamentos"
+E uma linha apresentando a forma de pagamento utilizada e o valor pago 
+E uma linha com a label "TOTAL PAGO" e o valor pago
+E uma linha com a label "RESTA A PAGAR" com o valor restante
+E o pedido deve continuar com status "EM PAGAMENTO"
+E deve existir o opção "PAGO"
+E um botão "Pagar Mais"
+Quando eu clicar em PAGO
+Então deve ser exibida a uma mensagem de confirmação "Deseja marcar esta ordem como paga?"
+E as opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em CONFIRMAR
+Então a tela com os pedidos abertos é exibida
+E o pedido recém pago deve constar com status "PAGO"
+Quando eu selecionar o pedido recém pago
+Então a tela com os dados de pagamento do pedido é aberta 
+E a opção "FECHAR" disponível
+Quando eu clicar em FECHAR
+Então deve ser exibida a uma mensagem de confirmação "Deseja realmente encerrar esta ordem?" 
+E as opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em CONFIRMAR
+Então a tela com os pedidos abertos é exibida
+E o pedido recém pago não deve ser listado
 
-
-Cenário: PEDIDO-0013
-Dado  Que o usuário  esteja na tela de detalhe de pagamento  pedido anterior e selecione “Pagar”
-
-Quando  o usuário entrar a quantia restante do pedido e clicar sobre o botão “Pagar”
-        E realizar o fluxo de pagamento com sucesso
-
-Então  deve ser exibida a tela de pedidos na tab de “Pagamentos” com:
-Uma linha apresentando a forma de pagamento utilizada e o valor pago. 
-Uma linha com a label “TOTAL PAGO” e o valor pago
-Uma linha com a label “RESTA A PAGAR” com o valor restante
-        E o pedido deve continuar com status “EM PAGAMENTO”
-        E deve existir o botão “PAGO”
-        E um botão com a opção o label “Pagar Mais”
-
-Quando  o usuário clicar em “PAGO”
-
-Então  deve ser exibida a uma mensagem de confirmação “Deseja marcar esta ordem como paga?” e as opções “CANCELAR” e “CONFIRMAR”
-
-
-Quando  o usuário clicar em “CONFIRMAR”
-
-Então  a tela com os pedidos abertos é exibida. O pedido recém pago deve constar com status “PAGO”
-
-Quando  o usuário selecionar o pedido recém pago
-
-Então  a tela com os dados de pagamento do pedido é aberta. 
-E a opção “FECHAR” está disponível
-
-Quando  o usuário clicar em “FECHAR” 
-
-Então  deve ser exibida a uma mensagem de confirmação “Deseja marcar esta ordem como paga?” e as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “CONFIRMAR”
-
-Então a tela com os pedidos abertos é exibida. O pedido recém pago não deve ser listado
-
+@blink
 Cenário: PEDIDO-0014
 Dado  Que o usuário  esteja na tela de pedido 
         E que existam um produtos cadastrados com pedidos fechados
