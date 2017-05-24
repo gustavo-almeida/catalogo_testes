@@ -150,41 +150,32 @@ Quando eu criar um pedido
 E selecionar a tab Catálogo
 E no filtro de categoria escolher o valor A
 Então a lista de itens exibe apenas o item X e a lista de Seleção exibe o valor A
-Quando o usuário escolher o valor C na lista de seleção de categoria
+Quando eu escolher o valor C na lista de seleção de categoria
 Então a lista de itens exibe apenas o item Z e a lista de Seleção exibe o valor C
 
+@blink
+Cenário: PEDIDO-0010 - Atualizar quantidade de produtos num pedido
+Dado que eu esteja na tela de pedido 
+E que exista um produto X cadastrado com valor "R$4,99" com categoria A
+E que exista um produto Y cadastrado com valor "R$10,00" com categoria B
+E que exista um produto Z cadastrado com valor "R$20,00" com categoria C
+E esteja na página de pedido criado com um produto Y incluído no carrinho
+Quando eu selecionar a tab Catálogo
+E clicar na opção de busca (lupa)
+Então é exibido opção Voltar e uma caixa de texto com o label "Pesquisar..."
+Quando eu realizar uma busca com o valor 'Y'
+Então é listado o produto Y com quantidade '0' e botões para alterar quantidade (- e +)
+Quando eu clicar '2' vezes em '+' e '1' vez em '-'
+Então o contador é atualizado para '1', depois '2', depois '1' 
+E o botão Liberar Pagamento tem o valor atualizado "R$10,00", depois "R$20,00", depois "R$10,00"
+E o ícone do carrinho tem o contador com '1', '2', e '1' respectivamente
+Quando eu realizar uma busca com valor 'Z'
+Então é listado o produto Z com quantidade '0' e botões para alterar quantidade (- e +)
+Quando eu clicar '5' vezes em '+' e '1' vez em '-'
+Então o contador é atualizado de '1' a '5' e volte para '4'
+E o botão Liberar Pagamento tem o valor atualizado de "R$30,00" a "R$110,00", e volta para "R$90,00"
+E o ícone do carrinho tem o contador atualizado para '2'
 
-Cenário: PEDIDO-0010
-Dado  Que o usuário  esteja na tela de pedido 
-        E que exista um produto X cadastrado com valor “R$4,99" com categoria A
-E que exista um produto Y cadastrado com valor “R$10,00" com categoria B
-E que exista um produto Z cadastrado com valor “R$20,00" com categoria C
-
-Quando  o usuário criar um pedido
-        E selecionar a tab Catálogo
-        E clicar sobre a opção de busca (botão lupa)
-
-Então  é exibido um botão voltar e uma caixa de texto com o valor “Pesquisar…”
-
-Quando  o usuário digitar o valor Y e clicar OK
-
-Então é listado o produto Y, com quantidade 0 e botões de  valor “-” e “+”
-
-Quando  o usuário clicar 2 vezes em “+” e “1” vez em “-”
-
-Então  o contador é atualizado para “1”, depois “2”, depois “1” 
-        E o botão Liberar Pagamento tem o valor atualizado “R$10,00”, depois “R$20,00”, depois “R$10,00”
-        E o ícone do carrinho tem o contador iniciado com 1
-
-Quando  o usuário digitar o valor Z e clicar OK
-
-Então é listado o produto Z, com quantidade 0 e botões de  valor “-” e “+”
-
-Quando  o usuário clicar 5 vezes em “+” e “1” vez em “-”
-
-Então  o contador é atualizado para “1”, depois “2”, depois “3”, depois “4”, depois “5”, depois “4”
-        E o botão Liberar Pagamento tem o valor atualizado “R$30,00”, depois “R$50,00”, depois “R$70,00”, depois “R$90,00”, depois “R$110,00”, depois “R$90,00”
-        E o ícone do carrinho tem o contador atualizado para 2
 
 Cenário: PEDIDO-0011
 Dado  Que o usuário  esteja na tela de pedido resultante do caso Cenário: PEDIDO-0010
