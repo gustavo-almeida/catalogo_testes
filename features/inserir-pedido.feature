@@ -67,7 +67,7 @@ E clicar na Opção de Busca (ícone de Lupa)
 E eu digitar na caixa de texto "Pesquisar" um caractere qualquer do nome do pedido recém criado
 Então a lista de pedidos deve exibir o pedido recém criado dentre outros pedidos cujo nome também contenha o caractere digitado
 
-
+@blink
 Cenário: PEDIDO-0006 - Validar status do pedido
 Dado que eu tenha um pedido em aberto com valores avulsos 'R$4,00' e 'R$2,50'
 E eu esteja na tela de pedido com esse pedido listado
@@ -94,6 +94,7 @@ E eu clicar em Confirmar
 Então a tela pedidos é exibida com o último filtro de pesquisa utilizado 
 E o pedido passa a ter o status "PAGO" e com o ícone de pedido marcado em verde
 
+@blink
 Cenário: PEDIDO-0007 - Validar marcar pedido como PAGO
 Dado que eu tenha um pedido marcado como PAGO com valores avulsos 'R$4,00' e 'R$2,50'
 E eu esteja na tela de pedidos com esse pedido listado após buscá-lo
@@ -175,7 +176,7 @@ Então o contador é atualizado de '1' a '5' e volte para '4'
 E o botão Liberar Pagamento tem o valor atualizado de "R$30,00" a "R$110,00", e volta para "R$90,00" (passos de R$20,00)
 E o ícone do carrinho tem o contador atualizado para '2'
 
-
+@blink
 Cenário: PEDIDO-0011 - Validar limpeza de carrinho na inclusão de pedido
 Dado que eu esteja na tela de pedido 
 E que exista um produto X cadastrado com valor "R$4,99" com categoria A
@@ -257,65 +258,43 @@ Então a tela com os pedidos abertos é exibida
 E o pedido recém pago não deve ser listado
 
 @blink
-Cenário: PEDIDO-0014
-Dado  Que o usuário  esteja na tela de pedido 
-        E que existam um produtos cadastrados com pedidos fechados
-
-Quando  o usuário selecionar o pedido fechado no caso CIELO-PEDIDO-0013
-
-Então  deve ser exibida uma tela de detalhe do Pedido com
-Fragmento com a opção sair (Botão X), nome do pedido com o status “FECHADO” e um botão com a label “REABRIR”
-Tab com as opções: Conta (Selecionado) e Pagamentos
-Lista com os itens do pedido
-Uma linha ao final da lista com a label “TOTAL” e o valor final do pedido
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário clicar em “REABRIR”
-
-Então  deve ser exibida uma mensagem de confirmação “Tem certeza que deseja reabrir este pedido?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “CANCELAR”
-
-Então  a tela de detalhe do PEDIDO é exibida novamente com o pedido inalterado
-
-Quando  o usuário clicar em “REABRIR”
-        E selecionar “CONFIRMAR”
-
-Então  é exibida a tela de lista de pedidos, com filtro para os pedidos fechados.
-
-Quando  o usuário selecionar a opção de filtro para os pedidos Abertos
-
-Então  é exibida a tela de lista de pedidos onde existe o pedido recém reaberto com o status “REABERTO”
-
-Quando  o usuário selecionar o pedido recém reaberto
-
-Então deve ser exibida uma tela de detalhe do Pedido com
-Fragmento com a opção sair (Botão X), nome do pedido com o status “REABERTO” e um botão com a label “PAGO”
-Tab com as opções: Conta (Selecionado) e Pagamentos
-Lista com os itens do pedido
-Uma linha ao final da lista com a label “TOTAL” e o valor final do pedido
-Um botão com a opção “Pagar mais”
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário selecionar clicar no botão “Pagar mais” 
-        E proceder com o pagamento de um valor qualquer com sucesso
-
-Então deve ser exibida uma tela de detalhe do Pedido com o mesmo pedido com o status “REABERTO”, com uma linha referente a este último pagamento adicional e o total reflete o novo valor.
-
-Quando  o usuário clicar no botão “PAGO” e selecionar “CONFIRMAR”
-
-Então deve ser exibida uma tela de pedidos abertos. 
-
-Quando  o usuário selecionar o pedido recém pago
-
-Então deve ser exibida uma tela de detalhe do Pedido com o mesmo pedido com o status “PAGO” e com um botão “FECHAR”
-
-Quando  o usuário clicar no botão “FECHAR” e selecionar “CONFIRMAR”
-
-Então deve ser exibida uma tela de pedidos abertos, onde este último pedido não está listado
- 
-Quando  o usuário selecionar a opção de filtrar os pedidos por pedidos “Fechados”
-
-Então deve ser exibida uma tela de pedidos fechados, onde este último pedido está listado
-
-
+Cenário: PEDIDO-0014 - Reabrir e alterar status de pedido pago
+Dado que eu tenha um pedido fechado em dois pagamentos, um parcial e um totalizando o valor
+E que eu esteja na tela de Pedidos 
+Quando eu selecionar este pedido fechado
+Então deve ser exibida uma tela de Detalhe de Pedido com nome do pedido e status "FECHADO"
+E opções Sair (X) e REABRIR
+E Tab com as opções: Conta (Selecionado) e Pagamentos
+E lista com itens do pedido
+E rodapé com a label "TOTAL" e o valor final do pedido
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
+Quando eu clicar em REABRIR
+Então é exibida uma mensagem de confirmação "Tem certeza que deseja reabrir este pedido?" 
+E opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em CANCELAR
+Então a tela de detalhe do pedido é exibida novamente com o pedido inalterado
+Quando eu clicar em REABRIR
+E clicar em CONFIRMAR
+Então é exibida a tela de lista de pedidos filtrada por pedidos fechados
+Quando eu selecionar a opção de filtro para os pedidos Abertos
+Então é exibida a tela de lista de pedidos com o pedido recém reaberto com o status "REABERTO"
+Quando eu selecionar o pedido reaberto
+Então deve ser exibida uma tela de Detalhe de Pedido com nome do pedido e status "REABERTO"
+E opções Sair (X) e PAGO
+E Tab com as opções: Conta (Selecionado) e Pagamentos
+E lista com itens do pedido
+E rodapé com a label "TOTAL" e o valor final do pedido
+E botão "Pagar mais"
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
+Quando eu clicar no botão "Pagar mais" 
+E proceder com o pagamento de um valor qualquer com sucesso
+Então deve ser exibida uma tela de detalhe do Pedido atual com o status "REABERTO"
+E uma linha referente a este último pagamento adicional com o total refletindo o novo valor
+Quando eu clicar no botão "PAGO" e selecionar "CONFIRMAR"
+Então deve ser exibida uma tela de pedidos abertos 
+Quando eu selecionar o pedido recém pago
+Então deve ser exibida uma tela de detalhe do Pedido atual com o status "PAGO" e com um botão "FECHAR"
+Quando eu clicar no botão "FECHAR" e selecionar "CONFIRMAR"
+Então deve ser exibida uma tela de pedidos abertos, em que este último pedido não está listado
+Quando eu filtrar os pedidos por pedidos "Fechados"
+Então deve ser exibida uma tela de pedidos fechados, em que este último pedido está listado
