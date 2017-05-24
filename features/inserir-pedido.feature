@@ -159,7 +159,6 @@ Dado que eu esteja na tela de pedido
 E que exista um produto X cadastrado com valor "R$4,99" com categoria A
 E que exista um produto Y cadastrado com valor "R$10,00" com categoria B
 E que exista um produto Z cadastrado com valor "R$20,00" com categoria C
-E esteja na página de pedido criado com um produto Y incluído no carrinho
 Quando eu selecionar a tab Catálogo
 E clicar na opção de busca (lupa)
 Então é exibido opção Voltar e uma caixa de texto com o label "Pesquisar..."
@@ -173,34 +172,33 @@ Quando eu realizar uma busca com valor 'Z'
 Então é listado o produto Z com quantidade '0' e botões para alterar quantidade (- e +)
 Quando eu clicar '5' vezes em '+' e '1' vez em '-'
 Então o contador é atualizado de '1' a '5' e volte para '4'
-E o botão Liberar Pagamento tem o valor atualizado de "R$30,00" a "R$110,00", e volta para "R$90,00"
+E o botão Liberar Pagamento tem o valor atualizado de "R$30,00" a "R$110,00", e volta para "R$90,00" (passos de R$20,00)
 E o ícone do carrinho tem o contador atualizado para '2'
 
 
-Cenário: PEDIDO-0011
-Dado  Que o usuário  esteja na tela de pedido resultante do caso Cenário: PEDIDO-0010
-
-Quando  o usuário clicar no carrinho
-
-Então  deve ser exibida uma tela de detalhe do Pedido com
-Fragmento com a opção sair (Botão X), nome do pedido com o status “INICIADO” e um botão com a label “LIMPAR”
-Tab com as opções: Conta (Selecionado) e Pagamentos
-Lista com 2 itens: item Y com quantidade 1 e valor total R$10,00;  item Z com quantidade 4 e valor total R$80,00
-Uma linha ao final da lista com a label “TOTAL” e o valor final do pedido “R$90,00”
-Opções Default do android: Back, Home e Apps
-
-Quando  o usuário clicar em “LIMPAR”
-
-Então  deve ser exibida uma tela de confirmação “Deseja limpar carrinho?” com as opções “CANCELAR” e “CONFIRMAR”
-
-Quando  o usuário clicar em “CANCELAR”
-
-Então  usuário é retornado à tela anterior
-
-Quando  o usuário clicar em “LIMPAR” 
-        E clicar em “CONFIRMAR”
-
-Então  usuário é retornado à tela de pedido, na tab “Catálogo”, com o botão “Liberar Pagamento” desabilitado e o carrinho vazio. O nome do pedido é exibido no topo da tela.
+Cenário: PEDIDO-0011 - Validar limpeza de carrinho na inclusão de pedido
+Dado que eu esteja na tela de pedido 
+E que exista um produto X cadastrado com valor "R$4,99" com categoria A
+E que exista um produto Y cadastrado com valor "R$10,00" com categoria B
+E que exista um produto Z cadastrado com valor "R$20,00" com categoria C
+E esteja na página de pedido criado com '1' produto Y e '4' produtos Z incluídos no carrinho
+Quando eu clicar na opção Carrinho
+Então deve ser exibida uma tela de Detalhe de Pedido com nome do pedido e status "INICIADO"
+E opções Sair (X) e LIMPAR
+E Tab com as opções: Conta (Selecionado) e Pagamentos
+E lista com item 'Y' com quantidade '1' e valor total "R$10,00" e item 'Z' com quantidade '4' e valor total "R$80,00"
+E rodapé com a label "TOTAL" e o valor final do pedido "R$90,00"
+E opções nativas do Android: 'Back', 'Home' e 'Apps'
+Quando eu clicar em "LIMPAR"
+Então deve ser exibida uma tela de confirmação "Deseja limpar carrinho?" com as opções "CANCELAR" e "CONFIRMAR"
+Quando eu clicar em "CANCELAR"
+Então a operação é cancelada
+E a tela anterior é exibida
+Quando eu clicar em "LIMPAR"
+E clicar em "CONFIRMAR"
+Então a tela de pedido é exibida na tab "Catálogo"
+E o botão "Liberar Pagamento" é desabilitado e o carrinho sem contador 
+E o nome do pedido é exibido no cabeçalho
 
 
 Cenário: PEDIDO-0012
