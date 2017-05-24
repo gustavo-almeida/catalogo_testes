@@ -140,22 +140,18 @@ E opções "Liberar Pagamento" e "Carrinho" desabilitadas
 E TabBar Vender (Selecionada), Minha Conta, Apps e Ajuda
 E opções nativas do Android: 'Back', 'Home' e 'Apps'
 
-Cenário: PEDIDO-0009 
-Dado  Que o usuário  esteja na tela de pedido 
-        E que exista um produto X cadastrado com valor “R$4,99" com categoria A
-E que exista um produto Y cadastrado com valor “R$10,00" com categoria B
-E que exista um produto Z cadastrado com valor “R$20,00" com categoria C
-
-Quando  o usuário criar um pedido
-        E selecionar a tab Catálogo
-        E na Lista de Seleção de categoria o usuário escolher o valor A
-
-Então  a lista de itens exibe apenas o item X e a lista de Seleção exibe o valor A
-
-Quando  o usuário escolher o valor C na lista de seleção de categoria 
-
-Então  a lista de itens exibe apenas o item Z e a lista de Seleção exibe o valor C
-
+@blink
+Cenário: PEDIDO-0009 - Filtrar categorias em Catálogo na tela de pedido
+Dado que eu esteja na tela de pedido 
+E que exista um produto X cadastrado com valor "R$4,99" com categoria A
+E que exista um produto Y cadastrado com valor "R$10,00" com categoria B
+E que exista um produto Z cadastrado com valor "R$20,00" com categoria C
+Quando eu criar um pedido
+E selecionar a tab Catálogo
+E no filtro de categoria escolher o valor A
+Então a lista de itens exibe apenas o item X e a lista de Seleção exibe o valor A
+Quando o usuário escolher o valor C na lista de seleção de categoria
+Então a lista de itens exibe apenas o item Z e a lista de Seleção exibe o valor C
 
 
 Cenário: PEDIDO-0010
