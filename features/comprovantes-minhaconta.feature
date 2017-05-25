@@ -59,11 +59,12 @@ E Enviar via cliente
 E Enviar todas as vias
 E Cancelar a venda
 
-Cenário: COMPROVANTES-MINHACONTA-0008
-Dado  o usuário clique em cima de um comprovantes
-
-Quando  o usuário escolher a opção de enviar  via do estabelecimento
-
-Então  a tela de enviar comprovante é exibida 
-E botão de cancelar 
-E botão de enviar 
+@blink
+Cenário: COMPROVANTES-MINHACONTA-0008 - Iniciar envio de comprovante
+Dado eu esteja na tela Comprovantes
+Quando eu clicar eu um comprovante
+E escolher a opção Enviar via do estabelecimento
+Então a tela Enviar comprovante é exibida
+E campo para preenchimento E-mail do estabelecimento 
+E opção Cancelar 
+E opção Enviar
