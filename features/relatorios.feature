@@ -101,15 +101,15 @@ E somatório de vendas por bandeira de cartão
 E totalizador de vendas
 E totalizador por valor
 
-Cenário: RELATÓRIOS-VENDASPORPERIODO-0013
-Dado  que eu esteja na tela vendas por período
-
-Quando  o usuário clicar na opção de envio do e-mail 
-
-Então  a tela enviar relatório deve ser exibida
-E com e-mail já vem pré cadastrado 
-E botão enviar 
-E Botão cancelar 
+@blink
+Cenário: RELATÓRIOS-VENDASPORPERIODO-0013 - Acessar envio de e-mail de relatório de vendas por período
+Dado que eu esteja na tela de Vendas por período
+E tenha realizado um filtro para um período 
+Quando eu clicar na opção de envio por e-mail
+Então a tela Enviar relatório deve ser exibida
+E campo E-mail cadastrado (não editável) preenchido com e-mail padrão
+E opção Enviar
+E opção Cancelar
 
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0014
 Dado  que eu esteja na tela vendas por período
