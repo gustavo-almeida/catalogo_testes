@@ -18,7 +18,7 @@ E abas Detalhado (selecionada) e Lista
 E lista com últimos comprovantes
 
 @blink
-Cenário: COMPROVANTES-MINHACONTA-0003
+Cenário: COMPROVANTES-MINHACONTA-0003 - Exibir filtro de comprovantes
 Dado eu esteja na tela Comprovantes
 Quando clicar na opção de filtro
 Então é exibido a tela de Filtro com opções Fechar e Confirmar
@@ -28,7 +28,7 @@ E opção de filtro por Nome do cliente
 E opção de filtro por Status
 
 @blink
-Cenário: COMPROVANTES-MINHACONTA-0004
+Cenário: COMPROVANTES-MINHACONTA-0004 - Aba Lista em Comprovantes
 Dado eu esteja na tela Comprovantes
 Quando eu clicar na aba Lista
 Então os comprovantes são exibidos em formato de lista
@@ -38,17 +38,11 @@ E status do pedido
 E data e hora
 E valor do pedido
 
-
-
-Cenário: COMPROVANTES-MINHACONTA-0005
-Dado  o usuário esteja na tela de comprovantes
-
-Quando  o usuário clicar na aba detalhado
-
-Então  é exibido todos os comprovantes em formato de timeline
-E data e hora 
-E comprovante
-
+@blink
+Cenário: COMPROVANTES-MINHACONTA-0005 - Aba Detalhado em Comprovantes 
+Dado eu esteja na aba Lista da tela Comprovantes
+Quando eu clicar na aba Lista Detalhado
+Então os comprovantes são exibidos em formato de timeline
 
 
 Cenário: COMPROVANTES-MINHACONTA-0006
