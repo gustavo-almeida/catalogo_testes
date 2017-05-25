@@ -29,14 +29,14 @@ E opções Detalhado (Selecionada) e Lista
 @blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0004 - Acessar Detalhado em Vendas de hoje
 Dado que eu tenha venda no dia de hoje 
-E que eu esteja na tela Vendas de hoje dos Relatórios
+E que eu esteja na tela Vendas de hoje em Relatórios
 Quando eu clicar em Detalhado
 Então a tela de relatórios deve ser exibida em formato de comprovante
 
 @blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0005 - Acessar Lista em Vendas de hoje
 Dado que eu tenha venda no dia de hoje 
-E que eu esteja na tela Vendas de hoje dos Relatórios
+E que eu esteja na tela Vendas de hoje em Relatórios
 Quando eu clicar em Lista
 Então a tela de relatórios deve ser exibida com o filtro da data do dia
 E somatório de vendas por bandeira de cartão
@@ -46,7 +46,7 @@ E totalizador por valor
 @blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0006 - Acessar envio de e-mail de relatório de vendas de hoje
 Dado que eu tenha venda no dia de hoje 
-E que eu esteja na tela Vendas de hoje dos Relatórios
+E que eu esteja na tela Vendas de hoje em Relatórios
 Quando eu clicar na opção de envio por e-mail
 Então a tela Enviar relatório deve ser exibida
 E campo E-mail cadastrado (não editável) preenchido com e-mail padrão
@@ -56,7 +56,7 @@ E opção Cancelar
 @blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0007 - Enviar e-mail de relatório de vendas de hoje
 Dado que eu tenha venda no dia de hoje 
-E esteja na tela Enviar relatório (opção e-mail)
+E esteja na tela Enviar relatório (opção e-mail) de Venda do dia
 Quando eu clicar em Enviar
 Então deve aparecer a tela de enviando email
 E e-mail enviado com sucesso
@@ -93,7 +93,7 @@ Então a tela de relatórios deve ser exibida em formato de comprovante
 
 @blink
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0012 - Acessar Lista em Vendas por período
-Dado que eu esteja na tela de Vendas por período
+Dado que eu esteja na tela de Vendas por período em Relatórios
 E tenha realizado um filtro para um período 
 Quando eu clicar em Lista
 Então a tela de relatórios deve ser exibida com o range de data escolhido
@@ -103,7 +103,7 @@ E totalizador por valor
 
 @blink
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0013 - Acessar envio de e-mail de relatório de vendas por período
-Dado que eu esteja na tela de Vendas por período
+Dado que eu esteja na tela de Vendas por período em Relatórios
 E tenha realizado um filtro para um período 
 Quando eu clicar na opção de envio por e-mail
 Então a tela Enviar relatório deve ser exibida
@@ -111,14 +111,13 @@ E campo E-mail cadastrado (não editável) preenchido com e-mail padrão
 E opção Enviar
 E opção Cancelar
 
-Cenário: RELATÓRIOS-VENDASPORPERIODO-0014
-Dado  que eu esteja na tela vendas por período
-E o usuário clicar na opção de envio do e-mail 
-
-Quando  clicar em enviar 
-
+@blink
+Cenário: RELATÓRIOS-VENDASPORPERIODO-0014 - Enviar e-mail de relatório de vendas por período
+Dado que eu esteja na tela de Vendas por período em Relatórios
+E esteja na tela Enviar relatório (opção e-mail) de Venda por período
+Quando eu clicar em Enviar
 Então deve aparecer a tela de enviando email
-E e-mail enviando com sucesso
+E e-mail enviado com sucesso
 
 
 Cenário: RELATÓRIOS-VENDASPORTURNO-0015
