@@ -24,7 +24,7 @@ Dado que eu tenha venda no dia de hoje
 E eu esteja na tela Relatórios
 Quando eu clicar em Vendas de hoje
 Então a tela de relatórios é exibida com opção E-mail
-E opções Detalhado e Lista
+E opções Detalhado (Selecionada) e Lista
 
 @blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0004 - Acessar Detalhado em Vendas de hoje
@@ -75,15 +75,14 @@ Quando eu clicar em vendas por período
 E realizar o filtro para um período onde não há vendas
 Então é exibida a mensagem de "Não existem vendas"
 
-Cenário: RELATÓRIOS-VENDASPORPERIODO-0010
-Dado  que eu tenha vendas realizadas
-
-Quando  o usuário clicar na opção de vendas por período
-E selecionar uma data e hora
-E clicar em confirmar
-
-Então  a tela de relatório é exibida com as opções de detalhado e Lista
-
+@blink
+Cenário: RELATÓRIOS-VENDASPORPERIODO-0010 - Filtrar Vendas por período em Relatórios
+Dado que eu tenha vendas realizadas
+E eu esteja na tela Relatórios
+Quando eu clicar em Vendas por período
+E realizar o filtro para um período com vendas
+Então a tela de relatórios é exibida com opção E-mail
+E opções Detalhado (Selecionada) e Lista
 
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0011
 Dado  que eu esteja na tela de vendas por período
