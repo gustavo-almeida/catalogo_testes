@@ -26,12 +26,14 @@ Quando eu clicar em Vendas de hoje
 Então a tela de relatórios é exibida com opção E-mail
 E opções Detalhado e Lista
 
+@blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0004 - Acessar Detalhado em Vendas de hoje
 Dado que eu tenha venda no dia de hoje 
 E que eu esteja na tela Vendas de hoje dos Relatórios
 Quando eu clicar em Detalhado
 Então a tela de relatórios deve ser exibida em formato de comprovante
 
+@blink
 Cenário: RELATÓRIOS-VENDASDEHOJE-0005 - Acessar Lista em Vendas de hoje
 Dado que eu tenha venda no dia de hoje 
 E que eu esteja na tela Vendas de hoje dos Relatórios
@@ -41,15 +43,15 @@ E somatório de vendas por bandeira de cartão
 E totalizador de vendas
 E totalizador por valor
 
-Cenário: RELATÓRIOS-VENDASDEHOJE-0006
-Dado  que eu esteja na tela vendas de hoje
-
-Quando  o usuário clicar na opção de envio do e-mail 
-
-Então  a tela enviar relatório deve ser exibida
-E com e-mail já vem pré cadastrado 
-E botão enviar 
-E Botão cancelar 
+@blink
+Cenário: RELATÓRIOS-VENDASDEHOJE-0006 - Acessar envio de e-mail de relatório de vendas de hoje
+Dado que eu tenha venda no dia de hoje 
+E que eu esteja na tela Vendas de hoje dos Relatórios
+Quando eu clicar na opção de envio por e-mail
+Então a tela Enviar relatório deve ser exibida
+E campo E-mail cadastrado preenchido com e-mail padrão
+E opção Enviar
+E opção Cancelar
 
 Cenário: RELATÓRIOS-VENDASDEHOJE-0007
 Dado  que eu esteja na tela vendas de hoje
