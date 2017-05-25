@@ -84,12 +84,13 @@ E realizar o filtro para um período com vendas
 Então a tela de relatórios é exibida com opção E-mail
 E opções Detalhado (Selecionada) e Lista
 
-Cenário: RELATÓRIOS-VENDASPORPERIODO-0011
-Dado  que eu esteja na tela de vendas por período
+@blink
+Cenário: RELATÓRIOS-VENDASPORPERIODO-0011 - Acessar Detalhado em Vendas por Período
+Dado que eu esteja na tela de Vendas por período
+E com filtro para um período realizado 
+Quando eu clicar em Detalhado
+Então a tela de relatórios deve ser exibida em formato de comprovante
 
-Quando  o usuário escolher a data e hora desejada
-
-Então  a tela de relatórios deve ser exibida na opção detalhada em formato de comprovante
 
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0012
 Dado  que eu esteja na  tela de vendas por período
