@@ -2,6 +2,7 @@
 
 Funcionalidade: Como usuário Cielo LIO, gostaria de validar as funcionalidades de relatórios.
 
+@blink
 Cenário: MINHACONTA-RELATÓRIOS-0001 - Acessar Relatórios
 Dado que eu esteja na tela Minha conta
 Quando selecionar a opção Relatórios
@@ -10,20 +11,20 @@ E opção Vendas de hoje
 E opção Vendas por período
 E opção Vendas por turno 
 
-Cenário: RELATÓRIOS-VENDASDEHOJE-0002
-Dado  que não tenha nenhuma venda no dia de  hoje
+@blink
+Cenário: RELATÓRIOS-VENDASDEHOJE-0002 - Acessar Vendas de hoje sem vendas no dia
+Dado que não exista nenhuma venda no dia de hoje
+E eu esteja na tela Relatórios
+Quando eu clicar em Vendas de hoje
+Então a tela de relatórios é exibida com a mensagem de "Não existem vendas"
 
-Quando  o usuário clicar na opção de vendas de hoje
-
-Então  a tela de relatórios  é exibida com a mensagem de “ Não existem vendas”
-
-
-Cenário: RELATÓRIOS-VENDASDEHOJE-0003
-Dado  que eu tenha venda no dia de  hoje
-
-Quando  o usuário clicar na opção de vendas de hoje
-
-Então  a tela de relatórios  é exibida com as opções de Detalhado e Lista 
+@blink
+Cenário: RELATÓRIOS-VENDASDEHOJE-0003 - Acessar Vendas de hoje com vendas no dia
+Dado que eu tenha venda no dia de hoje
+E eu esteja na tela Relatórios
+Quando eu clicar em Vendas de hoje
+Então a tela de relatórios é exibida com opção E-mail
+E opções Detalhado e Lista
 
 Cenário: RELATÓRIOS-VENDASDEHOJE-0004
 Dado  que eu esteja na tela vendas de hoje
