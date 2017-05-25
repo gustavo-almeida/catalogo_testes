@@ -47,17 +47,17 @@ Então os comprovantes são exibidos em formato de timeline
 @non-blink
 Cenário: COMPROVANTES-MINHACONTA-0006 - Acessar Comprovantes sem venda realizada
 Dado que eu não tenha nenhuma venda realizada
-Quando eu acessar a Tela Comprovantes
+Quando eu acessar a tela Comprovantes
 Então é exibido a mensagem de não há relatórios
 
-
-Cenário: COMPROVANTES-MINHACONTA-0007
-Dado  o usuário esteja na tela de comprovantes
-Quando  o usuário clicar em cima de um comprovantes
-Então  é exibido as opções Enviar via do estabelecimento
-E enviar via cliente
-E enviar todas as vias
-E cancelar a venda
+@blink
+Cenário: COMPROVANTES-MINHACONTA-0007 - Acessar opções do comprovante
+Dado eu esteja na tela Comprovantes
+Quando eu clicar eu um comprovante
+Então é exibido um menu com opção Enviar via do estabelecimento
+E Enviar via cliente
+E Enviar todas as vias
+E Cancelar a venda
 
 Cenário: COMPROVANTES-MINHACONTA-0008
 Dado  o usuário clique em cima de um comprovantes
