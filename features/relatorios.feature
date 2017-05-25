@@ -26,12 +26,11 @@ Quando eu clicar em Vendas de hoje
 Então a tela de relatórios é exibida com opção E-mail
 E opções Detalhado e Lista
 
-Cenário: RELATÓRIOS-VENDASDEHOJE-0004
-Dado  que eu esteja na tela vendas de hoje
-
-Quando  o usuário clicar na opção de detalhado
-
-Então  a tela de relatórios deve ser exibida em formato de comprovante
+Cenário: RELATÓRIOS-VENDASDEHOJE-0004 - Acessar Vendas de hoje Detalhado
+Dado que eu tenha venda no dia de hoje 
+E que eu esteja na tela Vendas de hoje dos Relatórios
+Quando eu clicar em Detalhado
+Então a tela de relatórios deve ser exibida em formato de comprovante
 
 Cenário: RELATÓRIOS-VENDASDEHOJE-0005
 Dado  que eu esteja na tela vendas de hoje
