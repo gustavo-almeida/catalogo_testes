@@ -44,21 +44,16 @@ Dado eu esteja na aba Lista da tela Comprovantes
 Quando eu clicar na aba Lista Detalhado
 Então os comprovantes são exibidos em formato de timeline
 
-
-Cenário: COMPROVANTES-MINHACONTA-0006
-Dado  que não tenha nenhuma venda realizada
-
-Quando  o usuário clicar na label de comprovantes
-
-Então  é exibido a mensagem de não há relatórios
-
+@non-blink
+Cenário: COMPROVANTES-MINHACONTA-0006 - Acessar Comprovantes sem venda realizada
+Dado que eu não tenha nenhuma venda realizada
+Quando eu acessar a Tela Comprovantes
+Então é exibido a mensagem de não há relatórios
 
 
 Cenário: COMPROVANTES-MINHACONTA-0007
 Dado  o usuário esteja na tela de comprovantes
-
 Quando  o usuário clicar em cima de um comprovantes
-
 Então  é exibido as opções Enviar via do estabelecimento
 E enviar via cliente
 E enviar todas as vias
