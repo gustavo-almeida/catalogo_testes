@@ -49,18 +49,17 @@ Dado que eu tenha venda no dia de hoje
 E que eu esteja na tela Vendas de hoje dos Relatórios
 Quando eu clicar na opção de envio por e-mail
 Então a tela Enviar relatório deve ser exibida
-E campo E-mail cadastrado preenchido com e-mail padrão
+E campo E-mail cadastrado (não editável) preenchido com e-mail padrão
 E opção Enviar
 E opção Cancelar
 
-Cenário: RELATÓRIOS-VENDASDEHOJE-0007
-Dado  que eu esteja na tela vendas de hoje
-E o usuário clicar na opção de envio do e-mail 
-
-Quando  clicar em enviar 
-
+@blink
+Cenário: RELATÓRIOS-VENDASDEHOJE-0007 - Enviar e-mail de relatório de vendas de hoje
+Dado que eu tenha venda no dia de hoje 
+E esteja na tela Enviar relatório (opção e-mail)
+Quando eu clicar em Enviar
 Então deve aparecer a tela de enviando email
-E e-mail enviando com sucesso
+E e-mail enviado com sucesso
 
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0008
 Dado  que não tenha nenhuma venda no dia de  hoje
