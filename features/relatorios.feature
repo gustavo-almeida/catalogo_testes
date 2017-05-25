@@ -61,19 +61,19 @@ Quando eu clicar em Enviar
 Então deve aparecer a tela de enviando email
 E e-mail enviado com sucesso
 
-Cenário: RELATÓRIOS-VENDASPORPERIODO-0008
-Dado  que não tenha nenhuma venda no dia de  hoje
+@blink
+Cenário: RELATÓRIOS-VENDASPORPERIODO-0008 - Acessar Vendas por período em Relatórios
+Dado eu esteja na tela Relatórios
+Quando eu clicar na opção Vendas por período
+Então é exibida tela com filtros de data e hora
+E opções Cancelar e Confirmar
 
-Quando  o usuário clicar na opção de vendas por período
-
-Então  a tela de relatórios  é exibida com a mensagem de “ Não existem vendas”
-
-Cenário: RELATÓRIOS-VENDASPORPERIODO-0009
-Dado  que eu tenha venda no dia de  hoje
-
-Quando  o usuário clicar na opção de vendas por período
-
-Então  a tela com filtros de data e hora é exibida com botão cancelar e Confirmar
+@blink
+Cenário: RELATÓRIOS-VENDASPORPERIODO-0009 - Filtrar Vendas por período não existente em Relatórios
+Dado eu esteja na tela Relatórios
+Quando eu clicar em vendas por período
+E realizar o filtro para um período onde não há vendas
+Então é exibida a mensagem de "Não existem vendas"
 
 Cenário: RELATÓRIOS-VENDASPORPERIODO-0010
 Dado  que eu tenha vendas realizadas
