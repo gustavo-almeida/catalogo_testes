@@ -23,21 +23,20 @@ Dado eu esteja na tela Comprovantes
 Quando clicar na opção de filtro
 Então é exibido a tela de Filtro com opções Fechar e Confirmar
 E opções de filtro por data
-E opções de filtro por range de valor
+E opções de filtro por Range de valor
 E opção de filtro por Nome do cliente
 E opção de filtro por Status
 
+@blink
 Cenário: COMPROVANTES-MINHACONTA-0004
-Dado  o usuário esteja na tela de comprovantes
-
-Quando  o usuário clicar na aba de lista
-
-Então  é exibido todos os comprovantes em formato de lista
-E bandeira
+Dado eu esteja na tela Comprovantes
+Quando eu clicar na aba Lista
+Então os comprovantes são exibidos em formato de lista
+E bandeira do cartão
 E forma de pagamento
-E status
-E data e hora 
-E valor
+E status do pedido
+E data e hora
+E valor do pedido
 
 
 
