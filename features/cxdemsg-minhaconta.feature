@@ -5,7 +5,7 @@ Funcionalidade: Como usuário Cielo LIO, gostaria de validar as funcionalidades 
 @blink
 Cenário: CXDEMSG-MINHACONTA-0001 - Validar Caixa de mensagens
 Dado que eu esteja em Minha Conta  
-Quando eu clicar na opção de caixa de mensagens
+Quando eu clicar na opção Caixa de mensagens
 Então é exibido a tela Caixa de mensagens com uma lista de mensagens e opção Voltar
 
 @non-blink #não temos mensagens pré cadastradas
