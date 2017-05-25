@@ -26,24 +26,20 @@ Quando eu clicar em Vendas de hoje
 Então a tela de relatórios é exibida com opção E-mail
 E opções Detalhado e Lista
 
-Cenário: RELATÓRIOS-VENDASDEHOJE-0004 - Acessar Vendas de hoje Detalhado
+Cenário: RELATÓRIOS-VENDASDEHOJE-0004 - Acessar Detalhado em Vendas de hoje
 Dado que eu tenha venda no dia de hoje 
 E que eu esteja na tela Vendas de hoje dos Relatórios
 Quando eu clicar em Detalhado
 Então a tela de relatórios deve ser exibida em formato de comprovante
 
-Cenário: RELATÓRIOS-VENDASDEHOJE-0005
-Dado  que eu esteja na tela vendas de hoje
-
-Quando  o usuário clicar na opção de lista
-
-Então  a tela de relatórios deve ser exibida com o filtro da data do dia
-E somatório de vendas por bandeira 
-E Totalizador de vendas 
+Cenário: RELATÓRIOS-VENDASDEHOJE-0005 - Acessar Lista em Vendas de hoje
+Dado que eu tenha venda no dia de hoje 
+E que eu esteja na tela Vendas de hoje dos Relatórios
+Quando eu clicar em Lista
+Então a tela de relatórios deve ser exibida com o filtro da data do dia
+E somatório de vendas por bandeira de cartão
+E totalizador de vendas
 E totalizador por valor
-E no header o símbolo para enviar por e-mail 
-
-
 
 Cenário: RELATÓRIOS-VENDASDEHOJE-0006
 Dado  que eu esteja na tela vendas de hoje
