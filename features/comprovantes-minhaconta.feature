@@ -19,15 +19,13 @@ E lista com últimos comprovantes
 
 @blink
 Cenário: COMPROVANTES-MINHACONTA-0003
-Dado  o usuário esteja na tela de comprovantes
-
-Quando  o usuário clicar na opção de filtro
-
-Então  é exibido a tela de filtros
-E filtro por data
-E filtro por range de valor
-E filtro de forma de pagamento
-E status
+Dado eu esteja na tela Comprovantes
+Quando clicar na opção de filtro
+Então é exibido a tela de Filtro com opções Fechar e Confirmar
+E opções de filtro por data
+E opções de filtro por range de valor
+E opção de filtro por Nome do cliente
+E opção de filtro por Status
 
 Cenário: COMPROVANTES-MINHACONTA-0004
 Dado  o usuário esteja na tela de comprovantes
