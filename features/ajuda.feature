@@ -25,28 +25,23 @@ Quando eu escolher alguma Dúvida Frequente
 E eu clicar em Voltar
 Então o menu anterior com as demais Dúvidas Frequentes é mostrado
 
-Cenário: AJUDA-CHAT_ONLINE-0001
-Dado  o usuário clique na aba Ajuda
+Cenário: AJUDA-CHAT_ONLINE-0001 - Acessar Chat online
+Dado que eu esteja na tela Ajuda
+Quando eu escolher a opção Chat online
+Então a tela de Chat online é exibida com o Serviço de Suporte
+E opção Novo Chat
 
-Quando  o usuário escolher a opção de Chat Online
+Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0001 - Acessar Dê a sua opinião
+Dado que eu esteja na tela Ajuda
+Quando eu escolher a opção Dê a sua opinião
+Então a tela Dê a sua opinião é exibida com opções Voltar e Enviar
+E campos destinados ao assunto e mensagem para a enviada
 
-Então  a tela de Chat Online é exibida com o Serviço de Suporte
-
-Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0001
-Dado  o usuário clique na aba Ajuda
-
-Quando  o usuário escolher a opção de Dê a sua Opinião
-
-Então  a tela de Dê a sua Opinião é exibida com os campos destinados ao assunto e mensagem para ser enviada
-
-
-Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0002
-Dado  o usuário clique na  opção de Dê a sua Opinião
-
-Quando  o usuário tenha escrito sua Opinião e clique em prosseguir
-
-Então  a mensagem é encaminhada.
-
+Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0002 - Enviar mensagem em Dê a sua opinião
+Dado que eu esteja na tela Dê a sua opinião em Ajuda  
+Quando eu enviar uma opinião escolhendo o assunto e redigindo uma mensagem
+Então a mensagem é encaminhada com sucesso
+E eu sou redirecionado para a tela Ajuda
 
 Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0003
 Dado  que o  usuário tenha clicado em  Dê a sua Opinião
