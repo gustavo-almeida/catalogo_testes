@@ -119,18 +119,17 @@ Quando eu clicar em Enviar
 Então deve aparecer a tela de enviando email
 E e-mail enviado com sucesso
 
-
-Cenário: RELATÓRIOS-VENDASPORTURNO-0015
-Dado  que eu esteja no menu relatórios
-
-Quando  o usuário clicar na opção de Vendas por turno
-
-Então  a tela de Vendas por turno  é exibida 
-E com label de Atual e Fechados
+@blink
+Cenário: RELATÓRIOS-VENDASPORTURNO-0015 - Acessar Vendas por turno em Relatórios
+Dado que eu esteja no menu Relatórios
+Quando eu clicar em Vendas por turno
+Então a tela de Vendas por turno é exibida com opção Voltar
+E label Atual e Fechados
 E com filtro de data até agora
-E com a listagem de vendas 
-E total de vendas
-E botão Finalizar Turno 
+E somatório de vendas por bandeira de cartão
+E totalizador de vendas
+E totalizador por valor
+E opção Finalizar turno atual 
 
 Cenário: RELATÓRIOS-VENDASPORTURNO-0016
 Dado  que eu esteja na tela vendas por turno
