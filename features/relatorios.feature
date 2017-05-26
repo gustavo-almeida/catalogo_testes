@@ -139,15 +139,12 @@ Então o modal é exibido com a mensagem de "Deseja fechar o turno referente ao 
 E campo observação 
 E opções NÃO e SIM
 
+@blink
+Cenário: RELATÓRIOS-VENDASPORTURNO-0017 - Abortar finalização de turno atual
+Dado que eu tenha iniciado Finalização de turno atual
+Quando eu Clicar em Não no modal de confirmação
+Então a tela de vendas por turno atual deve ser exibido
 
-Cenário: RELATÓRIOS-VENDASPORTURNO-0017
-Dado  que eu esteja na tela vendas por turno
-E cliquei no botão de finalizar por turno
-
-Quando  aparecer o modal 
-E clicar em Não
-
-Então  a tela de vendas por turno atual deve ser exibido
 
 Cenário: RELATÓRIOS-VENDASPORTURNO-0018
 Dado  que eu esteja na tela vendas por turno
