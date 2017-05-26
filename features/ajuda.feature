@@ -17,7 +17,7 @@ Então a tela de Dúvidas Frequentes é exibida com as 50 perguntas mais feitas 
 Cenário: AJUDA-DÚVIDAS_FREQUENTES-0002 - Acessar resposta à dúvida frequente
 Dado que eu esteja na tela Dúvidas Frequentes em Ajuda
 Quando eu escolher alguma Dúvida Frequente
-Então a resposta da dúvida é exibida em uma nova telacom opção Voltar
+Então a resposta da dúvida é exibida em uma nova tela com opção Voltar
 
 Cenário: AJUDA-DÚVIDAS_FREQUENTES-0003 - Voltar de uma resposta à dúvida frequente
 Dado que eu esteja na tela Dúvidas Frequentes em Ajuda
