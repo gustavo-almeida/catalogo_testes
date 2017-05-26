@@ -63,93 +63,71 @@ Dado que eu esteja na tela Telefones úteis em Ajuda
 Quando eu realizar uma busca com termo válido
 Então as opções de telefone são filtradas obedecendo ao termo inserido
 
-Cenário: AJUDA-AJUSTES-0001
-Dado  o usuário clique na aba Ajuda
+Cenário: AJUDA-AJUSTES-0001 - Acessar Ajustes em Ajuda
+Dado que eu esteja na tela Ajuda
+Quando eu escolher a opção Ajustes
+Então a tela de Ajustes é exibida com 3 subseções e ao todo 9 opções
 
-Quando  o usuário escolher a opção de Ajustes
+Cenário: AJUDA-AJUSTES-0002 - Acessar Ajuste Wi-fi em Ajuda
+Dado que eu esteja na tela Ajustes em Ajuda
+Quando eu escolher a opção Wi-Fi
+Então as redes disponíveis bem como o Switch de habilitar ou desabilitar o Wi-Fi é mostrado
 
-Então a tela de Ajustes  é exibida com 3 subseções e ao todo 9 opções
+Cenário: AJUDA-AJUSTES-0003 - Acessar Ajuste Tela em Ajuda
+Dado que eu esteja na tela Ajustes em Ajuda
+Quando eu escolher a opção Tela
+Então as opções de Tela são exibidos
 
+Cenário: AJUDA-AJUSTES-0004 - Acessar Ajuste Som e notificação em Ajuda
+Dado que eu esteja na tela Ajustes em Ajuda
+Quando eu escolher a opção Som e notificação
+Então as opções de Som e notificação são exibidos
 
-Cenário: AJUDA-AJUSTES-0002
-Dado  o usuário tenha escolhido a opção de Ajustes
+Cenário: AJUDA-AJUSTES-0005 - Acessar Ajuste Bateria em Ajuda
+Dado que eu esteja na tela Ajustes em Ajuda
+Quando eu escolher a opção Bateria
+Então as tela Bateria com as devidas informações é exibida
 
-Quando  o usuário escolher a opção de Wi-Fi
+Cenário: AJUDA-AJUSTES-0006 - Acessar Ajuste Data e hora em Ajuda
+Dado que eu esteja na tela Ajustes em Ajuda
+Quando eu escolher a opção Data e hora
+Então as opções de Data e hora são exibidas
 
-Então  as Redes disponíveis bem como o Switch de habilitar ou desabilitar o Wi-Fi é mostrado
+Cenário: AJUDA-AJUSTES-0007 - Acessar Ajuste Impressão em Ajuda
+Dado que eu esteja na tela Ajustes em Ajuda
+Quando eu escolher a opção Impressão
+Então as opções de Impressão são exibidas
 
-Cenário: AJUDA-AJUSTES-0003
-Dado  o usuário tenha escolhido a opção de Ajustes
+Cenário: AJUDA-SOBRE_A_CIELO_LIO-0001 - Acessar Minha LIO
+Dado que eu esteja na tela Ajuda
+Quando eu escolher a opção Minha LIO
+Então a tela Minha LIO é exibida com as informações do plano contratado
+E opção de atualização de aplicativos
+E bloco Geral com opções de funções Administrativas, Técnicas e Sobre
 
-Quando  o usuário escolher a opção de Tela
+Cenário: AJUDA-SOBRE_A_CIELO_LIO-0002 - Buscar atualizações em Minha LIO
+Dado que eu esteja na tela Minha LIO em Ajuda
+Quando eu escolher a opção Buscar atualizações
+Então o sistema verificará se há atualização disponível para ser feita
 
-Então  as opções de Tela são exibidos
+Cenário: AJUDA-SOBRE_A_CIELO_LIO-0003 - Voltar de Minha LIO
+Dado que eu esteja na tela Minha LIO em Ajuda
+Quando eu clicar em Voltar
+Então o menu anterior com as demais opções de Ajuda é mostrado
 
- Cenário: AJUDA-AJUSTES-0004
-Dado  o usuário tenha escolhido a opção de Ajustes
+@non-blink
+Cenário: AJUDA-SOBRE_A_CIELO_LIO-0004 - Acessar Informações de SIM Card 1
+Dado que eu esteja na tela Minha LIO em Ajuda
+Quando eu acessar a opção Sobre
+E acessar a opção "Informações de Telefonia"
+E clicar em "Número de SIM Card (Slot 1)" 
+Então uma tela com um código de barras referente ao SIM Card 1 é exibida
 
-Quando  o usuário escolher a opção de Som e notificação
-
-Então  as opções de Som e notificação são exibidos
-
-
-Cenário: AJUDA-AJUSTES-0005
-Dado  o usuário tenha escolhido a opção de Ajustes
-
-Quando  o usuário escolher a opção de Bateria
-
-Então  as Tela de Bateria com as devidas informações é exibida
-
-
-Cenário: AJUDA-AJUSTES-0006
-Dado  o usuário tenha escolhido a opção de Ajustes
-
-Quando  o usuário escolher a opção de Data e hora
-
-Então  as opções de Data e hora são exibidas
-
-
-Cenário: AJUDA-AJUSTES-0007
-Dado  o usuário tenha escolhido a opção de Ajustes
-
-Quando  o usuário escolher a opção de Impressão
-
-Então  as opções de Impressão são exibidas
-
-Cenário: AJUDA-SOBRE_A_CIELO_LIO-0001
-Dado  o usuário clique na aba Ajuda
-
-Quando  o usuário escolher a opção de Sobre a Cielo LIO
-
-Então  a tela de Sobre a Cielo LIO é exibida com as informações do aparelho e do software, além de opções análise e atualização. Adicionalmente são exibidas as informações de plano contratado e de versão do launcher.
-
-
-
-Cenário: AJUDA-SOBRE_A_CIELO_LIO-0002
-Dado  o usuário clique na  opção de Sobre a Cielo LIO
-
-Quando  o usuário escolher a opção de Atualizar o Cielo OS
-
-Então  o Sistema verificará se há atualização disponível para ser feita
-
-
-Cenário: AJUDA-SOBRE_A_CIELO_LIO-0003
-Dado  o usuário clique na  opção de Sobre a Cielo LIO
-
-Quando  o usuário queira voltar ao menu anterior e clique no botão voltar
-
-Então  o menu anterior com as demais opções de Ajuda é mostrado
-
- Cenário: AJUDA-SOBRE_A_CIELO_LIO-0004
-Dado  o usuário clique na  opção de Sobre a Cielo LIO e, em seguida, clique na opção “Informações de telefonia”
-
-Quando  o usuário clicar na opção “Número de SIM Card (SIM Card 1)” 
-
-Então  uma  tela com um código de barras referente ao SIM Card 1 é exibida
-
+@non-blink
 Cenário: AJUDA-SOBRE_A_CIELO_LIO-0005
-Dado  o Cielo Lio contenha 2 SIM Cards instalados, usuário clique na aba Ajuda, em seguida, na  opção de Sobre a Cielo LIO e, em seguida, clique na opção “Informações de telefonia”.
-
-Quando  o usuário clicar na opção “Número de SIM Card (SIM Card 2)” 
-
-Então  uma  tela com um código de barras referente ao SIM Card 2 é exibida
+Dado que a Cielo LIO contenha 2 SIM Cards instalados
+E que eu esteja na tela Minha LIO em Ajuda
+Quando eu acessar a opção Sobre
+E acessar a opção "Informações de Telefonia"
+E clicar em "Número de SIM Card (Slot 2)" 
+Então uma tela com um código de barras referente ao SIM Card 2 é exibida
