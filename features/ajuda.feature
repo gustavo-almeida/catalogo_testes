@@ -43,35 +43,25 @@ Quando eu enviar uma opinião escolhendo o assunto e redigindo uma mensagem
 Então a mensagem é encaminhada com sucesso
 E eu sou redirecionado para a tela Ajuda
 
-Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0003
-Dado  que o  usuário tenha clicado em  Dê a sua Opinião
+Cenário: AJUDA-DÊ_A_SUA_OPINIÃO-0003 - Cancelar envio de mensagem em Dê a sua opinião
+Dado que eu esteja na tela Dê a sua opinião em Ajuda  
+Quando clicar em Voltar
+Então o menu anterior com as demais opções de Ajuda é exibido
 
-Quando  o usuário queira voltar ao menu anterior e clique no botão voltar
-
-Então  o menu anterior com as demais opções de Ajuda é mostrado
-
-Cenário: AJUDA-TELEFONES_ÚTEIS-0001
-Dado  o usuário clique na aba Ajuda
-
-Quando  o usuário escolher a opção de Telefones Úteis
-
-Então  a tela de Telefones Úteis  é exibida com 8 opções possíveis
-
+Cenário: AJUDA-TELEFONES_ÚTEIS-0001 - Acessar Telefones úteis
+Dado que eu esteja na tela Ajuda
+Quando eu escolher a opção Telefones úteis
+Então a tela Telefones Úteis é exibida com opção Buscar e 8 opções possíveis
   
-Cenário: AJUDA-TELEFONES_ÚTEIS-0002
-Dado  o usuário clique na aba Ajuda
+Cenário: AJUDA-TELEFONES_ÚTEIS-0002 - Expandir Telefone na lista de Telefones úteis
+Dado que eu esteja na tela Telefones úteis em Ajuda
+Quando eu clicar em alguma opção listada de Telefone Útil
+Então o referido Telefone é mostrado na forma de "scroll down"
 
-Quando  o usuário clica em alguma opção listada de Telefone Útil
-
-Então  o referido Telefone é mostrado na forma de “scroll down”
-
-
-Cenário: AJUDA-TELEFONES_ÚTEIS-0003
-Dado  o usuário tenha escolhido a opção de Telefones Úteis
-
-Quando  o usuário clica na lupa e digita o local desejado ou uma palavra referente ao nome 
-
-Então  é exibida a pesquisa (caso exista) desejada
+Cenário: AJUDA-TELEFONES_ÚTEIS-0003 - Realizar busca em Telefones úteis
+Dado que eu esteja na tela Telefones úteis em Ajuda
+Quando eu realizar uma busca com termo válido
+Então as opções de telefone são filtradas obedecendo ao termo inserido
 
 Cenário: AJUDA-AJUSTES-0001
 Dado  o usuário clique na aba Ajuda
