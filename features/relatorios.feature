@@ -142,26 +142,23 @@ E opções NÃO e SIM
 @blink
 Cenário: RELATÓRIOS-VENDASPORTURNO-0017 - Abortar finalização de turno atual
 Dado que eu tenha iniciado Finalização de turno atual
-Quando eu Clicar em Não no modal de confirmação
-Então a tela de vendas por turno atual deve ser exibido
+Quando eu clicar em NÃO no modal de confirmação
+Então a operação é cancelada 
+E a tela de vendas por turno atual deve ser exibido
 
+@blink
+Cenário: RELATÓRIOS-VENDASPORTURNO-0018 - Confirmar finalização de turno atual
+Dado que eu tenha iniciado Finalização de turno atual
+Quando eu clicar em SIM no modal de confirmação
+Então a operação é concluída
+E deve aparecer a mensagem de "Fechamento de turno realizado com sucesso!"
 
-Cenário: RELATÓRIOS-VENDASPORTURNO-0018
-Dado  que eu esteja na tela vendas por turno
-E cliquei no botão de finalizar por turno
-
-Quando  aparecer o modal 
-E clicar em sim
-
-Então deve aparecer a mensagem de “Fechamento de turno realizado com sucesso”.
-
-Cenário: RELATÓRIOS-VENDASPORTURNO-0019
-Dado  que eu esteja na tela vendas por turno
-
-Quando o usuário clicar na label fechados
-
+@blink
+Cenário: RELATÓRIOS-VENDASPORTURNO-0019 - Acessar Fechados de Vendas por turno
+Dado que eu esteja na tela Vendas por turno
+Quando eu clicar na label Fechados
 Então deve aparecer a listagem de Turnos fechados com observação
-E Valor
+E valor
 E data do turno
 
 
