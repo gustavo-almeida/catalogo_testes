@@ -131,15 +131,14 @@ E totalizador de vendas
 E totalizador por valor
 E opção Finalizar turno atual 
 
-Cenário: RELATÓRIOS-VENDASPORTURNO-0016
-Dado  que eu esteja na tela vendas por turno
-
-Quando  o usuário clicar na botão de finalizar por turno
-
-Então  o modal é exibido com a mensagem de “ deseja fechar o turno referente ao período DD/MM/AAAA, HH:HH à DD/MM/AAAA, HH:HH 
+@blink
+Cenário: RELATÓRIOS-VENDASPORTURNO-0016 - Iniciar Finalizar turno atual
+Dado que eu esteja na tela Vendas por turno
+Quando eu clicar na opção Finalizar turno atual
+Então o modal é exibido com a mensagem de "Deseja fechar o turno referente ao período DD/MM/AAAA, HH:MM à DD/MM/AAAA, HH:MM ?"
 E campo observação 
-E botão Não
-E Botão Sim
+E opções NÃO e SIM
+
 
 Cenário: RELATÓRIOS-VENDASPORTURNO-0017
 Dado  que eu esteja na tela vendas por turno
