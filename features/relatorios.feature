@@ -160,15 +160,3 @@ Quando eu clicar na label Fechados
 Então deve aparecer a listagem de Turnos fechados com observação
 E valor
 E data do turno
-
-
-
-
-Cenário: RELATÓRIOS-VENDASPORTURNO-0020
-Dado  que eu esteja na tela vendas por turno
-
-Quando o usuário clicar na label fechados
-
-Então deve aparecer a listagem de Turnos fechados com observação
-E Valor
-E data do turno
